@@ -25,8 +25,8 @@ df = (json_normalize(india_stat))
 covid19_html = df.to_html(index=False)
 
 #write html to file
-text_file = open("index.html", "w")
+text_file = open("covid19.html", "w")
 text_file.write(covid19_html)
-text_file.write("\n")
-text_file.write("Disclaimer: I do not take any responsibility for the correctness of the data in this dashboards. The data presented is a representation of the data pulled from the api present at https://rapidapi.com/astsiatsko/api/coronavirus-monitor/endpoints")
+text_file.write("\n\n\n")
+text_file.write("Disclaimer: The data presented is a representation of the data pulled from the api present at https://rapidapi.com/astsiatsko/api/coronavirus-monitor/endpoints")
 text_file.close()
