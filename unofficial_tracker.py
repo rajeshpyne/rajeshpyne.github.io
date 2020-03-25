@@ -154,7 +154,7 @@ def patient_tracing_stat(patient_tracing_api):
 			nationality = patient_data[patient_index]['nationality'][0].encode('ascii', 'ignore').decode('ascii')
 		else:
 			nationality = "Not Found"
-		place_attributes = patient_data[patient_index]['place_attributes'].encode('ascii', 'ignore').decode('ascii')
+		place_attributes = patient_data[patient_index]['place_attributes']
 		foreign_visit = ""
 		place = ""
 		for visit in range(len(place_attributes)):
