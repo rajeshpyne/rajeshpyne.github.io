@@ -143,7 +143,9 @@ def patient_tracing_stat(patient_tracing_api):
 		status = patient_data[patient_index]['status']
 		remarks = patient_data[patient_index]['notes']
 		contracted_from = patient_data[patient_index]['contractedFrom']
-		if len(patient_data[patient_index]['sources']) > 0 :
+		if("sources" in patient_data[patient_index] == False):
+			sources = ""
+		elif len(patient_data[patient_index]['sources']) > 0 :
 			sources = patient_data[patient_index]['sources'][0]
 		else:
 			sources = ""
