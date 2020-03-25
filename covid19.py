@@ -202,6 +202,6 @@ if __name__=='__main__':
 
 	patient_tracing_stat(patient_tracing_api)
 
-	
+
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
