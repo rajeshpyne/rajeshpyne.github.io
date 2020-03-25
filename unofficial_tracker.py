@@ -142,17 +142,18 @@ def patient_tracing_stat(patient_tracing_api):
 		state = patient_data[patient_index]['state']
 		status = patient_data[patient_index]['status']
 		remarks = patient_data[patient_index]['notes']
-		contracted_from = patient_data[patient_index]['contractedFrom']
+		if("contractedFrom" not in patient_data[patient_index]):
+			contracted_from = ""
+		else:
+			contracted_from = patient_data[patient_index]['contractedFrom']
 		if("sources" not in patient_data[patient_index]):
 			sources = ""
 		elif len(patient_data[patient_index]['sources']) > 0 :
 			sources = patient_data[patient_index]['sources'][0]
-		else:
-			sources = ""
 		if (len(patient_data[patient_index]['nationality'])>0):
 			nationality = patient_data[patient_index]['nationality'][0]
 		else:
-			nationality = ""
+			nationality = "Not Found"
 		place_attributes = patient_data[patient_index]['place_attributes']
 		foreign_visit = ""
 		place = ""
