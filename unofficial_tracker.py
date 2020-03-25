@@ -157,7 +157,16 @@ def patient_tracing_stat(patient_tracing_api):
 		for relation in range(len(relationship)):
 			family_link = family_link + relationship[relation]['link'] + ", "
 			trace_link = trace_link + relationship[relation]['with'][0] + ", "
-		patient_data_df.loc[patient_index] = []
+		patient_data_df.loc[patient_index] = [patient_id,reported_on,onset_estimate,age_estimate,gender,city,district,state,status,remarks,contracted_from,sources,nationality,foreign_visit,place,family_link,trace_link]
+		patient_data_html = patient_data_df.to_html(index=False)
+		text_file = open("covid19_patient_tracking.html", "w")
+		text_file.write("<h2>Covid19 Patient Tracker</h2>")
+		text_file.write("<br>")
+		text_file.write(patient_data_html)
+		text_file.write("<br><br>")
+		text_file.write("Last Refreshed : "+ results["lastRefreshed"])
+		text_file.write("<br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>")
+		text_file.close()
 
 
 
