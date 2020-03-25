@@ -125,7 +125,39 @@ def patient_tracing_stat(patient_tracing_api):
 	response = requests.request("GET", patient_tracing_api)
 	results = json.loads(response.text)
 
-	print(len(results["data"]["rawPatientData"]))
+	patient_data_df = pd.DataFrame(
+	columns=["PatientId","Reported On","OnSet Estimate","Age Estimate",
+	"Gender","City","District","State","Status","Remarks","Contracted From",
+	"News Source","Nationality","Foreign Visit","Place","Family Link","Trace Link"])
+
+	patient_data = results["data"]["rawPatientData"]
+	for patient_index in range(len(patient_data)):
+		patient_id = patient_data['patientId']
+		reported_on = patient_data['reportedOn']
+		onset_estimate = patient_data['onsetEstimate']
+		age_estimate = patient_data['ageEstimate']
+		gender = patient_data['gender']
+		city = patient_data['city']
+		district = patient_data['district']
+		state = patient_data['state']
+		status = patient_data['status']
+		remarks = patient_data['notes']
+		contracted_from = patient_data['contractedFrom']
+		sources = patient_data['sources'][0]
+		nationality = patient_data['nationality']
+		place_attributes = patient_data['place_attributes']
+		foreign_visit = None
+		place = None
+		for visit in range(len(place_attributes)):
+			foreign_visit = foreign_visit + place_attributes[visit]['is_foreign'] + ", "
+			place = place + place_attributes[visit]['place'] + ","
+		relationship = patient_data['relationship']
+		family_link = None
+		trace_link = None
+		for relation in range(len(relationship)):
+			family_link = family_link + relationship[relation]['link'] + ", "
+			trace_link = trace_link + relationship[relation]['with'][0] + ", "
+		patient_data_df.loc[patient_index] = []
 
 
 
