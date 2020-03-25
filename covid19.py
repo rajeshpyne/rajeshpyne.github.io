@@ -241,6 +241,7 @@ if __name__=='__main__':
 	print("Patient Tracking Monitor")
 
 	patient_travel_history_stat(patient_travel_history_api)
+	print("Patient Travel History Monitor")
 
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
