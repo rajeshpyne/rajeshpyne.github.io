@@ -6,7 +6,7 @@ import pandas as pd
 def rapidapi_monitor(rapidapi_url):
 	url = rapidapi_url
 	#querystring = {"country":"India"}
-	country_list=["India","China","USA","Iran","Italy"]
+	country_list=["India","China","USA","Iran","Italy","France","Germany"]
 
 	headers = {
 	    'x-rapidapi-host': "coronavirus-monitor.p.rapidapi.com",
@@ -79,6 +79,48 @@ def agg_stat_api(rootnet_agg_stat_api):
 	text_file.write("Disclaimer: The data presented is a representation of the data pulled from https://www.mohfw.gov.in/")
 	text_file.close()
 
+def agg_hospital_stat(rootnet_hospital_bed_stat_api):
+	url = rootnet_hospital_bed_stat_api
+
+	response = requests.request("GET", url)
+	results = json.loads(response.text)
+
+	summary = results["data"]["summary"]
+	summary.update({"last_updated": results["lastRefreshed"]})
+	#last_updated = results["lastRefreshed"]
+	summary_df = json_normalize(summary)
+	summary_df = summary_df.rename(columns={"totalBeds":"Total Beds",
+						"totalHospitals":"Total Hospitals",
+						"urbanBeds":"Urban Total Beds",
+						"urbanHospitals":"Urban Total Hospitals",
+						"ruralBeds":"Rural Total Beds",
+						"ruralHospitals":"Rural Total Hospitals",
+						"last_updated":"Last Updated(UTC)"})
+	print(summary_df)
+	indian_hospital_summary_html = summary_df.to_html(index=False)
+
+	states_stat = results["data"]["regional"]
+	indian_hospitals_df = pd.DataFrame(columns=["State","Rural Hospitals","Rural Beds","Urban Hospitals","Urban Beds","Total Hospitals","Total Beds","Last Updated"])
+	for state_index in range(len(states_stat)):
+		state = (states_stat[state_index]["state"])
+		total_rural_hospitals = (states_stat[state_index]["ruralHospitals"])
+		total_rural_beds = (states_stat[state_index]["ruralBeds"])
+		total_urban_hospitals = (states_stat[state_index]["urbanHospitals"])
+		total_urban_beds = (states_stat[state_index]["urbanBeds"])
+		total_hospitals = (states_stat[state_index]["totalHospitals"])
+		total_beds = (states_stat[state_index]["totalBeds"])
+		last_updated = (states_stat[state_index]["asOn"])
+		indian_hospitals_df.loc[state_index] = [state,total_rural_hospitals,total_rural_beds,total_urban_hospitals,total_urban_beds,total_hospitals,total_beds,last_updated]
+	print(indian_hospitals_df)
+	indian_hospital_agg_html = indian_hospitals_df.to_html(index=False)
+	text_file = open("indian_hospitals_agg.html", "w")
+	text_file.write("<h2>Indian Hospital Statistics</h2>")
+	text_file.write("<br>")
+	text_file.write(indian_hospital_agg_html)
+	text_file.write("<br><br>")
+	text_file.write("<b>Disclaimer: The data presented is a representation of the data pulled from "+results["data"]["sources"][0]["url"]+"</b>")
+	text_file.close()
+
 
 if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
@@ -92,6 +134,8 @@ if __name__=='__main__':
 	rootnet_notification_api = "https://api.rootnet.in/covid19-in/notifications"
 
 	agg_stat_api(rootnet_agg_stat_api)
+
+	agg_hospital_stat(rootnet_hospital_bed_stat_api)
 
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
