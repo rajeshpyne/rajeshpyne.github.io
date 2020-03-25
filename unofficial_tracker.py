@@ -158,7 +158,7 @@ def patient_tracing_stat(patient_tracing_api):
 		foreign_visit = ""
 		place = ""
 		for visit in range(len(place_attributes)):
-			foreign_visit = foreign_visit + str(place_attributes[visit]['is_foreign'].encode('ascii', 'ignore').decode('ascii')) + ", "
+			foreign_visit = foreign_visit + str(place_attributes[visit]['is_foreign']) + ", "
 			place = place + place_attributes[visit]['place'].encode('ascii', 'ignore').decode('ascii') + ","
 		relationship = patient_data[patient_index]['relationship']
 		family_link = ""
