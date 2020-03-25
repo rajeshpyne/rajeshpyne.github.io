@@ -132,7 +132,7 @@ def patient_tracing_stat(patient_tracing_api):
 
 	patient_data = results["data"]["rawPatientData"]
 	for patient_index in range(len(patient_data)):
-		patient_id = patient_data[patient_index]['patientId']
+		patient_id = "P"+patient_data[patient_index]['patientId']
 		reported_on = patient_data[patient_index]['reportedOn']
 		onset_estimate = patient_data[patient_index]['onsetEstimate']
 		age_estimate = patient_data[patient_index]['ageEstimate']
@@ -143,7 +143,10 @@ def patient_tracing_stat(patient_tracing_api):
 		status = patient_data[patient_index]['status']
 		remarks = patient_data[patient_index]['notes']
 		contracted_from = patient_data[patient_index]['contractedFrom']
-		sources = patient_data[patient_index]['sources'][0]
+		if (len(patient_data[patient_index]['sources'])>0):
+			sources = patient_data[patient_index]['sources'][0]
+		else:
+			sources = None
 		nationality = patient_data[patient_index]['nationality']
 		place_attributes = patient_data[patient_index]['place_attributes']
 		foreign_visit = ""
@@ -156,7 +159,8 @@ def patient_tracing_stat(patient_tracing_api):
 		trace_link = ""
 		for relation in range(len(relationship)):
 			family_link = family_link + relationship[relation]['link'] + ", "
-			trace_link = trace_link + relationship[relation]['with'][0] + ", "
+			if(len(relationship[relation]['with']) > 0):
+				trace_link = trace_link + relationship[relation]['with'][0] + ", "
 		patient_data_df.loc[patient_index] = [patient_id,reported_on,onset_estimate,age_estimate,gender,city,district,state,status,remarks,contracted_from,sources,nationality,foreign_visit,place,family_link,trace_link]
 		patient_data_html = patient_data_df.to_html(index=False)
 		text_file = open("covid19_patient_tracking.html", "w")
