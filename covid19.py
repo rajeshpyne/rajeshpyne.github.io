@@ -58,7 +58,7 @@ def agg_stat_api(rootnet_agg_stat_api):
 						"deaths":"Total Deaths",
 						"confirmedButLocationUnidentified":"Confirmed (Missing)",
 						"last_updated":"Last Updated(UTC)"})
-	print(summary_df)
+	#print(summary_df)
 	indian_covid19_summary_html = summary_df.to_html(index=False)
 
 	states_stat = results["data"]["regional"]
@@ -70,7 +70,7 @@ def agg_stat_api(rootnet_agg_stat_api):
 		discharged = (states_stat[state_index]["discharged"])
 		deaths = (states_stat[state_index]["deaths"])
 		indian_state_df.loc[state_index] = [state,confirmed_indian,confirmed_foreigner,discharged,deaths]
-	print(indian_state_df)
+	#print(indian_state_df)
 	indian_stat_agg_html = indian_state_df.to_html(index=False)
 	text_file = open("indian_state_agg.html", "w")
 	text_file.write("<br><br>")
@@ -99,7 +99,7 @@ def agg_hospital_stat(rootnet_hospital_bed_stat_api):
 						"ruralBeds":"Rural Total Beds",
 						"ruralHospitals":"Rural Total Hospitals",
 						"last_updated":"Last Updated(UTC)"})
-	print(summary_df)
+	#print(summary_df)
 	indian_hospital_summary_html = summary_df.to_html(index=False)
 
 	states_stat = results["data"]["regional"]
@@ -114,7 +114,7 @@ def agg_hospital_stat(rootnet_hospital_bed_stat_api):
 		total_beds = (states_stat[state_index]["totalBeds"])
 		last_updated = (states_stat[state_index]["asOn"])
 		indian_hospitals_df.loc[state_index] = [state,total_rural_hospitals,total_rural_beds,total_urban_hospitals,total_urban_beds,total_hospitals,total_beds,last_updated]
-	print(indian_hospitals_df)
+	#print(indian_hospitals_df)
 	indian_hospital_agg_html = indian_hospitals_df.to_html(index=False)
 	text_file = open("indian_hospitals_agg.html", "w")
 	text_file.write("<h2>Indian Hospital Statistics</h2>")
@@ -187,12 +187,35 @@ def patient_travel_history_stat(patient_travel_history_api):
 	response = requests.request("GET", patient_travel_history_api)
 	results = json.loads(response.text)
 
+	patient_travel_history_df = pd.DataFrame(columns=["Id","Location","Address","Source","Lat/Long","Travel Mode","PatientId","Place Name","Time From","Time To","Visit Type"])
+	patient_travel = results["data"]["travel_history"]
+	for travel_index in range(len(patient_travel)):
+		id = patient_travel[travel_index]["_cn6ca"]
+		location = patient_travel[travel_index]["accuracylocation"]
+		address = patient_travel[travel_index]["address"]
+		source = patient_travel[travel_index]["datasource"]
+		lat_long = patient_travel[travel_index]["latlong"]
+		travel_mode = patient_travel[travel_index]["modeoftravel"]
+		patient_id = patient_travel[travel_index]["pid"]
+		place_name = patient_travel[travel_index]["placename"]
+		time_from = patient_travel[travel_index]["timefrom"]
+		time_to = patient_travel[travel_index]["timeto"]
+		visit_type = patient_travel[travel_index]["type"]
+		patient_travel_history_df.loc[travel_index]=[id,location,address,source,lat_long,travel_mode,patient_id,place_name,time_from,time_to,visit_type]
+		patient_travel_history_html = patient_travel_history_df.to_html(index=False)
+
+		text_file = open("patient_travel_history.html", "w")
+		text_file.write("<h2>Patient Travel History</h2>")
+		text_file.write("<br>")
+		text_file.write(patient_travel_history_html)
+		text_file.write("<br>Last Refreshed : "+ results["data"]["source"])
+		text_file.write("<br><br>")
+		text_file.write("<br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>")
+		text_file.close()
 
 
 if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
-	rapidapi_monitor(rapidapi_url)
-	#print(rapidapi_stat.head())
 
 	rootnet_agg_stat_api = "https://api.rootnet.in/covid19-in/stats/latest"
 	rootnet_daily_series_stat_api = "https://api.rootnet.in/covid19-in/stats/daily"
@@ -205,13 +228,19 @@ if __name__=='__main__':
 	statewise_tracing_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
 	patient_travel_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
 
+	rapidapi_monitor(rapidapi_url)
+	print("Covid19 Monitor")
+
 	agg_stat_api(rootnet_agg_stat_api)
+	print("Indian State Covid19 Monitor")
 
 	agg_hospital_stat(rootnet_hospital_bed_stat_api)
+	print("Indian Hospital Infrastructure")
 
 	patient_tracing_stat(patient_tracing_api)
+	print("Patient Tracking Monitor")
 
-	#patient_travel_history_stat(patient_travel_history_api)
+	patient_travel_history_stat(patient_travel_history_api)
 
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
