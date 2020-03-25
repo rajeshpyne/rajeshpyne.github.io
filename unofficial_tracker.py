@@ -132,41 +132,41 @@ def patient_tracing_stat(patient_tracing_api):
 
 	patient_data = results["data"]["rawPatientData"]
 	for patient_index in range(len(patient_data)):
-		patient_id = "P"+str(patient_data[patient_index]['patientId'])
-		reported_on = patient_data[patient_index]['reportedOn']
-		onset_estimate = patient_data[patient_index]['onsetEstimate']
-		age_estimate = patient_data[patient_index]['ageEstimate']
-		gender = patient_data[patient_index]['gender']
-		city = patient_data[patient_index]['city']
-		district = patient_data[patient_index]['district']
-		state = patient_data[patient_index]['state']
-		status = patient_data[patient_index]['status']
-		remarks = patient_data[patient_index]['notes']
+		patient_id = "P"+str(patient_data[patient_index]['patientId']).encode('ascii', 'ignore').decode('ascii')
+		reported_on = patient_data[patient_index]['reportedOn'].encode('ascii', 'ignore').decode('ascii')
+		onset_estimate = patient_data[patient_index]['onsetEstimate'].encode('ascii', 'ignore').decode('ascii')
+		age_estimate = patient_data[patient_index]['ageEstimate'].encode('ascii', 'ignore').decode('ascii')
+		gender = patient_data[patient_index]['gender'].encode('ascii', 'ignore').decode('ascii')
+		city = patient_data[patient_index]['city'].encode('ascii', 'ignore').decode('ascii')
+		district = patient_data[patient_index]['district'].encode('ascii', 'ignore').decode('ascii')
+		state = patient_data[patient_index]['state'].encode('ascii', 'ignore').decode('ascii')
+		status = patient_data[patient_index]['status'].encode('ascii', 'ignore').decode('ascii')
+		remarks = patient_data[patient_index]['notes'].encode('ascii', 'ignore').decode('ascii')
 		if("contractedFrom" not in patient_data[patient_index]):
 			contracted_from = ""
 		else:
-			contracted_from = patient_data[patient_index]['contractedFrom']
+			contracted_from = patient_data[patient_index]['contractedFrom'].encode('ascii', 'ignore').decode('ascii')
 		if("sources" not in patient_data[patient_index]):
 			sources = ""
 		elif len(patient_data[patient_index]['sources']) > 0 :
-			sources = patient_data[patient_index]['sources'][0]
+			sources = patient_data[patient_index]['sources'][0].encode('ascii', 'ignore').decode('ascii')
 		if (len(patient_data[patient_index]['nationality'])>0):
-			nationality = patient_data[patient_index]['nationality'][0]
+			nationality = patient_data[patient_index]['nationality'][0].encode('ascii', 'ignore').decode('ascii')
 		else:
 			nationality = "Not Found"
-		place_attributes = patient_data[patient_index]['place_attributes']
+		place_attributes = patient_data[patient_index]['place_attributes'].encode('ascii', 'ignore').decode('ascii')
 		foreign_visit = ""
 		place = ""
 		for visit in range(len(place_attributes)):
-			foreign_visit = foreign_visit + str(place_attributes[visit]['is_foreign']) + ", "
-			place = place + place_attributes[visit]['place'] + ","
+			foreign_visit = foreign_visit + str(place_attributes[visit]['is_foreign'].encode('ascii', 'ignore').decode('ascii')) + ", "
+			place = place + place_attributes[visit]['place'].encode('ascii', 'ignore').decode('ascii') + ","
 		relationship = patient_data[patient_index]['relationship']
 		family_link = ""
 		trace_link = ""
 		for relation in range(len(relationship)):
-			family_link = family_link + relationship[relation]['link'] + ", "
+			family_link = family_link + relationship[relation]['link'].encode('ascii', 'ignore').decode('ascii') + ", "
 			if(len(relationship[relation]['with']) > 0):
-				trace_link = trace_link + relationship[relation]['with'][0] + ", "
+				trace_link = trace_link + relationship[relation]['with'][0].encode('ascii', 'ignore').decode('ascii') + ", "
 		patient_data_df.loc[patient_index] = [patient_id,reported_on,onset_estimate,age_estimate,gender,city,district,state,status,remarks,contracted_from,sources,nationality,foreign_visit,place,family_link,trace_link]
 		patient_data_html = patient_data_df.to_html(index=False)
 		text_file = open("covid19_patient_tracking.html", "w")
