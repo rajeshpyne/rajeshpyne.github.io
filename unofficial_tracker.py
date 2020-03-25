@@ -183,6 +183,12 @@ def patient_tracing_stat(patient_tracing_api):
 		text_file.close()
 
 
+def patient_travel_history_stat(patient_travel_history_api):
+	response = requests.request("GET", patient_travel_history_api)
+	results = json.loads(response.text)
+
+
+
 if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
 	rapidapi_monitor(rapidapi_url)
@@ -196,8 +202,8 @@ if __name__=='__main__':
 
 	patient_tracing_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org"
 	statewise_tracing_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise"
-	statewise_tracing_history = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
-	patient_travel_history = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
+	statewise_tracing_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
+	patient_travel_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
 
 	agg_stat_api(rootnet_agg_stat_api)
 
@@ -205,6 +211,7 @@ if __name__=='__main__':
 
 	patient_tracing_stat(patient_tracing_api)
 
-	
+	patient_travel_history_stat(patient_travel_history_api)
+
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
