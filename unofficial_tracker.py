@@ -204,5 +204,7 @@ if __name__=='__main__':
 	agg_hospital_stat(rootnet_hospital_bed_stat_api)
 
 	patient_tracing_stat(patient_tracing_api)
+
+	
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
