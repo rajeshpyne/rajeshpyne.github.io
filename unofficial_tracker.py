@@ -132,7 +132,7 @@ def patient_tracing_stat(patient_tracing_api):
 
 	patient_data = results["data"]["rawPatientData"]
 	for patient_index in range(len(patient_data)):
-		patient_id = "P"+patient_data[patient_index]['patientId']
+		patient_id = "P"+str(patient_data[patient_index]['patientId'])
 		reported_on = patient_data[patient_index]['reportedOn']
 		onset_estimate = patient_data[patient_index]['onsetEstimate']
 		age_estimate = patient_data[patient_index]['ageEstimate']
@@ -143,11 +143,14 @@ def patient_tracing_stat(patient_tracing_api):
 		status = patient_data[patient_index]['status']
 		remarks = patient_data[patient_index]['notes']
 		contracted_from = patient_data[patient_index]['contractedFrom']
-		if (len(patient_data[patient_index]['sources'])>0):
+		if len(patient_data[patient_index]['sources']) > 0 :
 			sources = patient_data[patient_index]['sources'][0]
 		else:
-			sources = None
-		nationality = patient_data[patient_index]['nationality']
+			sources = ""
+		if (len(patient_data[patient_index]['nationality'])>0):
+			nationality = patient_data[patient_index]['nationality'][0]
+		else:
+			nationality = ""
 		place_attributes = patient_data[patient_index]['place_attributes']
 		foreign_visit = ""
 		place = ""
