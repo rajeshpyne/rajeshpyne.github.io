@@ -1,3 +1,4 @@
 # rajeshpyne.github.io
 
 <a href="https://rajeshpyne.github.io/covid19.html">Covid19 India</a>
+<a href="https://rajeshpyne.github.io/indian_state_agg.html">Covid19 Indian States</a>
