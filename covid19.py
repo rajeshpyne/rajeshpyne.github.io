@@ -14,6 +14,8 @@ def rapidapi_monitor(rapidapi_url):
 	    'x-rapidapi-key': "p3sNWKR33HmshSGWi2vxzPFX9LSKp1RGAtZjsn7rCR821QnNHR"
 	}
 
+	pd.options.display.max_rows
+	pd.set_option('display.max_colwidth', -1)
 	stat_df = pd.DataFrame()
 	for country_name in country_list:
 		response = requests.request("GET", url, headers=headers, params={"country":country_name})
@@ -50,6 +52,8 @@ def agg_stat_api(rootnet_agg_stat_api):
 	summary = results["data"]["summary"]
 	summary.update({"last_updated": results["lastRefreshed"]})
 	#last_updated = results["lastRefreshed"]
+	pd.options.display.max_rows
+	pd.set_option('display.max_colwidth', -1)
 	summary_df = json_normalize(summary)
 	summary_df = summary_df.rename(columns={"total":"Total Confirmed Cases",
 						"confirmedCasesIndian":"Total Confirmed Cases(Indian)",
@@ -88,6 +92,8 @@ def agg_hospital_stat(rootnet_hospital_bed_stat_api):
 	response = requests.request("GET", url)
 	results = json.loads(response.text)
 
+	pd.options.display.max_rows
+	pd.set_option('display.max_colwidth', -1)
 	summary = results["data"]["summary"]
 	summary.update({"last_updated": results["lastRefreshed"]})
 	#last_updated = results["lastRefreshed"]
@@ -134,6 +140,8 @@ def patient_tracing_stat(patient_tracing_api):
 	"Gender","City","District","State","Status","Remarks","Contracted From",
 	"News Source","Nationality","Foreign Visit","Place","Family Link","Trace Link"])
 
+	pd.options.display.max_rows
+	pd.set_option('display.max_colwidth', -1)
 	patient_data = results["data"]["rawPatientData"]
 	for patient_index in range(len(patient_data)):
 		patient_id = "P"+str(patient_data[patient_index]['patientId']).encode('ascii', 'ignore').decode('ascii')
@@ -187,6 +195,8 @@ def patient_travel_history_stat(patient_travel_history_api):
 	response = requests.request("GET", patient_travel_history_api)
 	results = json.loads(response.text)
 
+	pd.options.display.max_rows
+	pd.set_option('display.max_colwidth', -1)
 	patient_travel_history_df = pd.DataFrame(columns=["Id","Location","Address","Source","Lat/Long","Travel Mode","PatientId","Place Name","Time From","Time To","Visit Type"])
 	patient_travel = results["data"]["travel_history"]
 	for travel_index in range(len(patient_travel)):
