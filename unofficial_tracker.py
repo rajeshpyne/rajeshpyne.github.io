@@ -132,28 +132,28 @@ def patient_tracing_stat(patient_tracing_api):
 
 	patient_data = results["data"]["rawPatientData"]
 	for patient_index in range(len(patient_data)):
-		patient_id = patient_data['patientId']
-		reported_on = patient_data['reportedOn']
-		onset_estimate = patient_data['onsetEstimate']
-		age_estimate = patient_data['ageEstimate']
-		gender = patient_data['gender']
-		city = patient_data['city']
-		district = patient_data['district']
-		state = patient_data['state']
-		status = patient_data['status']
-		remarks = patient_data['notes']
-		contracted_from = patient_data['contractedFrom']
-		sources = patient_data['sources'][0]
-		nationality = patient_data['nationality']
-		place_attributes = patient_data['place_attributes']
-		foreign_visit = None
-		place = None
+		patient_id = patient_data[patient_index]['patientId']
+		reported_on = patient_data[patient_index]['reportedOn']
+		onset_estimate = patient_data[patient_index]['onsetEstimate']
+		age_estimate = patient_data[patient_index]['ageEstimate']
+		gender = patient_data[patient_index]['gender']
+		city = patient_data[patient_index]['city']
+		district = patient_data[patient_index]['district']
+		state = patient_data[patient_index]['state']
+		status = patient_data[patient_index]['status']
+		remarks = patient_data[patient_index]['notes']
+		contracted_from = patient_data[patient_index]['contractedFrom']
+		sources = patient_data[patient_index]['sources'][0]
+		nationality = patient_data[patient_index]['nationality']
+		place_attributes = patient_data[patient_index]['place_attributes']
+		foreign_visit = ""
+		place = ""
 		for visit in range(len(place_attributes)):
-			foreign_visit = foreign_visit + place_attributes[visit]['is_foreign'] + ", "
+			foreign_visit = foreign_visit + str(place_attributes[visit]['is_foreign']) + ", "
 			place = place + place_attributes[visit]['place'] + ","
-		relationship = patient_data['relationship']
-		family_link = None
-		trace_link = None
+		relationship = patient_data[patient_index]['relationship']
+		family_link = ""
+		trace_link = ""
 		for relation in range(len(relationship)):
 			family_link = family_link + relationship[relation]['link'] + ", "
 			trace_link = trace_link + relationship[relation]['with'][0] + ", "
