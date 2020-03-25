@@ -121,10 +121,17 @@ def agg_hospital_stat(rootnet_hospital_bed_stat_api):
 	text_file.write("<b>Disclaimer: The data presented is a representation of the data pulled from "+results["data"]["sources"][0]["url"]+"</b>")
 	text_file.close()
 
+def patient_tracing_stat(patient_tracing_api):
+	response = requests.request("GET", patient_tracing_api)
+	results = json.loads(response.text)
+
+	print(len(results["data"]["rawPatientData"]))
+
+
 
 if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
-	rapidapi_monitor(rapidapi_url)
+	#rapidapi_monitor(rapidapi_url)
 	#print(rapidapi_stat.head())
 
 	rootnet_agg_stat_api = "https://api.rootnet.in/covid19-in/stats/latest"
@@ -133,9 +140,15 @@ if __name__=='__main__':
 	rootnet_contact_and_helpline_api = "https://api.rootnet.in/covid19-in/contacts"
 	rootnet_notification_api = "https://api.rootnet.in/covid19-in/notifications"
 
-	agg_stat_api(rootnet_agg_stat_api)
+	patient_tracing_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org"
+	statewise_tracing_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise"
+	statewise_tracing_history = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
+	patient_travel_history = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
 
-	agg_hospital_stat(rootnet_hospital_bed_stat_api)
+	#agg_stat_api(rootnet_agg_stat_api)
 
+	#agg_hospital_stat(rootnet_hospital_bed_stat_api)
+
+	patient_tracing_stat(patient_tracing_api)
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
