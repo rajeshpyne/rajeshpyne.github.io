@@ -149,7 +149,7 @@ def patient_tracing_stat(patient_tracing_api):
 		if("sources" not in patient_data[patient_index]):
 			sources = ""
 		elif len(patient_data[patient_index]['sources']) > 0 :
-			sources = patient_data[patient_index]['sources'][0].encode('ascii', 'ignore').decode('ascii')
+			sources = "<a href='"+patient_data[patient_index]['sources'][0].encode('ascii', 'ignore').decode('ascii')+"'>"+patient_data[patient_index]['sources'][0].encode('ascii', 'ignore').decode('ascii')+"</a><"
 		if (len(patient_data[patient_index]['nationality'])>0):
 			nationality = patient_data[patient_index]['nationality'][0].encode('ascii', 'ignore').decode('ascii')
 		else:
