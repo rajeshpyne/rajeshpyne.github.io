@@ -1,6 +1,6 @@
 import requests
 import json
-from pandas import json_normalize
+from pandas.io.json import json_normalize
 import pandas as pd
 
 
