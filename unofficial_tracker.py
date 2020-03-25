@@ -187,12 +187,35 @@ def patient_travel_history_stat(patient_travel_history_api):
 	response = requests.request("GET", patient_travel_history_api)
 	results = json.loads(response.text)
 
+	patient_travel_history_df = pd.DataFrame(columns=["Id","Location","Address","Source","Lat/Long","Travel Mode","PatientId","Place Name","Time From","Time To","Visit Type"])
+	patient_travel = results["data"]["travel_history"]
+	for travel_index in range(len(patient_travel)):
+		id = patient_travel[travel_index]["_cn6ca"]
+		location = patient_travel[travel_index]["accuracylocation"]
+		address = patient_travel[travel_index]["address"]
+		source = patient_travel[travel_index]["datasource"]
+		lat_long = patient_travel[travel_index]["latlong"]
+		travel_mode = patient_travel[travel_index]["modeoftravel"]
+		patient_id = patient_travel[travel_index]["pid"]
+		place_name = patient_travel[travel_index]["placename"]
+		time_from = patient_travel[travel_index]["timefrom"]
+		time_to = patient_travel[travel_index]["timeto"]
+		visit_type = patient_travel[travel_index]["type"]
+		patient_travel_history_df.loc[travel_index]=[id,location,address,source,lat_long,travel_mode,patient_id,place_name,time_from,time_to,visit_type]
+		patient_travel_history_html = patient_travel_history_df.to_html(index=False)
+
+		text_file = open("patient_travel_history.html", "w")
+		text_file.write("<h2>Patient Travel History</h2>")
+		text_file.write("<br>")
+		text_file.write(patient_travel_history_html)
+		text_file.write("<br>Last Refreshed : "+ results["data"]["source"])
+		text_file.write("<br><br>")
+		text_file.write("<br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>")
+		text_file.close()
 
 
 if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
-	rapidapi_monitor(rapidapi_url)
-	#print(rapidapi_stat.head())
 
 	rootnet_agg_stat_api = "https://api.rootnet.in/covid19-in/stats/latest"
 	rootnet_daily_series_stat_api = "https://api.rootnet.in/covid19-in/stats/daily"
@@ -205,6 +228,8 @@ if __name__=='__main__':
 	statewise_tracing_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
 	patient_travel_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
 
+	rapidapi_monitor(rapidapi_url)
+	
 	agg_stat_api(rootnet_agg_stat_api)
 
 	agg_hospital_stat(rootnet_hospital_bed_stat_api)
