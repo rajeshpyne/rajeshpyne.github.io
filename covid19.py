@@ -37,6 +37,7 @@ def rapidapi_monitor(rapidapi_url):
 
 	#write html to file
 	text_file = open("covid19.html", "w")
+	text_file.write("<h2>Covid19 World</h2>")
 	text_file.write(covid19_html)
 	text_file.write("<br><br>")
 	text_file.write("Disclaimer: The data presented is a representation of the data pulled from the api present at https://rapidapi.com/astsiatsko/api/coronavirus-monitor/endpoints")
@@ -78,8 +79,10 @@ def agg_stat_api(rootnet_agg_stat_api):
 	indian_stat_agg_html = indian_state_df.to_html(index=False)
 	text_file = open("indian_state_agg.html", "w")
 	text_file.write("<br><br>")
+	text_file.write("<h2>India Covid19 Statistics</h2>")
 	text_file.write(indian_covid19_summary_html)
 	text_file.write("<br><br>")
+	text_file.write("<h2>Indian States Statistics</h2>")
 	text_file.write(indian_stat_agg_html)
 	text_file.write("<br><br>")
 	text_file.write("Disclaimer: The data presented is a representation of the data pulled from https://www.mohfw.gov.in/")
