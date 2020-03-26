@@ -1,21 +1,21 @@
 import requests
 import json
-from pandas.io.json import json_normalize
+from pandas import json_normalize
 import pandas as pd
 
 
 def rapidapi_monitor(rapidapi_url):
 	url = rapidapi_url
 	#querystring = {"country":"India"}
-	country_list=["India","China","USA","Iran","Italy","France","Germany"]
+	country_list=["India","China","USA","Iran","Italy","France","Germany","Spain"]
 
 	headers = {
 	    'x-rapidapi-host': "coronavirus-monitor.p.rapidapi.com",
 	    'x-rapidapi-key': "p3sNWKR33HmshSGWi2vxzPFX9LSKp1RGAtZjsn7rCR821QnNHR"
 	}
 
-	pd.options.display.max_rows
-	pd.set_option('display.max_colwidth', -1)
+	#pd.options.display.max_rows
+	#pd.set_option('display.max_colwidth', -1)
 	stat_df = pd.DataFrame()
 	for country_name in country_list:
 		response = requests.request("GET", url, headers=headers, params={"country":country_name})
@@ -52,8 +52,8 @@ def agg_stat_api(rootnet_agg_stat_api):
 	summary = results["data"]["summary"]
 	summary.update({"last_updated": results["lastRefreshed"]})
 	#last_updated = results["lastRefreshed"]
-	pd.options.display.max_rows
-	pd.set_option('display.max_colwidth', -1)
+	#pd.options.display.max_rows
+	#pd.set_option('display.max_colwidth', -1)
 	summary_df = json_normalize(summary)
 	summary_df = summary_df.rename(columns={"total":"Total Confirmed Cases",
 						"confirmedCasesIndian":"Total Confirmed Cases(Indian)",
@@ -92,8 +92,8 @@ def agg_hospital_stat(rootnet_hospital_bed_stat_api):
 	response = requests.request("GET", url)
 	results = json.loads(response.text)
 
-	pd.options.display.max_rows
-	pd.set_option('display.max_colwidth', -1)
+	#pd.options.display.max_rows
+	#pd.set_option('display.max_colwidth', -1)
 	summary = results["data"]["summary"]
 	summary.update({"last_updated": results["lastRefreshed"]})
 	#last_updated = results["lastRefreshed"]
@@ -140,8 +140,8 @@ def patient_tracing_stat(patient_tracing_api):
 	"Gender","City","District","State","Status","Remarks","Contracted From",
 	"News Source","Nationality","Foreign Visit","Place","Family Link","Trace Link"])
 
-	pd.options.display.max_rows
-	pd.set_option('display.max_colwidth', -1)
+	#pd.options.display.max_rows
+	#pd.set_option('display.max_colwidth', -1)
 	patient_data = results["data"]["rawPatientData"]
 	for patient_index in range(len(patient_data)):
 		patient_id = "P"+str(patient_data[patient_index]['patientId']).encode('ascii', 'ignore').decode('ascii')
@@ -195,8 +195,8 @@ def patient_travel_history_stat(patient_travel_history_api):
 	response = requests.request("GET", patient_travel_history_api)
 	results = json.loads(response.text)
 
-	pd.options.display.max_rows
-	pd.set_option('display.max_colwidth', -1)
+	#pd.options.display.max_rows
+	#pd.set_option('display.max_colwidth', -1)
 	patient_travel_history_df = pd.DataFrame(columns=["Id","Location","Address","Source","Lat/Long","Travel Mode","PatientId","Place Name","Time From","Time To","Visit Type"])
 	patient_travel = results["data"]["travel_history"]
 	for travel_index in range(len(patient_travel)):
@@ -238,20 +238,20 @@ if __name__=='__main__':
 	statewise_tracing_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
 	patient_travel_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
 
-	rapidapi_monitor(rapidapi_url)
 	print("Covid19 Monitor")
+	rapidapi_monitor(rapidapi_url)
 
-	agg_stat_api(rootnet_agg_stat_api)
 	print("Indian State Covid19 Monitor")
+	agg_stat_api(rootnet_agg_stat_api)
 
-	agg_hospital_stat(rootnet_hospital_bed_stat_api)
 	print("Indian Hospital Infrastructure")
+	agg_hospital_stat(rootnet_hospital_bed_stat_api)
 
-	patient_tracing_stat(patient_tracing_api)
 	print("Patient Tracking Monitor")
+	patient_tracing_stat(patient_tracing_api)
 
-	patient_travel_history_stat(patient_travel_history_api)
 	print("Patient Travel History Monitor")
+	patient_travel_history_stat(patient_travel_history_api)
 
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
