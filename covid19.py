@@ -231,6 +231,7 @@ if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
 
 	rootnet_agg_stat_api = "https://api.rootnet.in/covid19-in/stats/latest"
+	rootnet_covid19_history_api = "https://api.rootnet.in/covid19-in/stats/history" ## TO DO
 	rootnet_daily_series_stat_api = "https://api.rootnet.in/covid19-in/stats/daily"
 	rootnet_hospital_bed_stat_api = "https://api.rootnet.in/covid19-in/stats/hospitals"
 	rootnet_contact_and_helpline_api = "https://api.rootnet.in/covid19-in/contacts"
@@ -256,5 +257,6 @@ if __name__=='__main__':
 	print("Patient Travel History Monitor")
 	patient_travel_history_stat(patient_travel_history_api)
 
+	print("")
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
