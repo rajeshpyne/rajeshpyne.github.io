@@ -2,6 +2,7 @@ import requests
 import json
 from pandas import json_normalize
 import pandas as pd
+from datetime import datetime,timedelta
 
 
 def rapidapi_monitor(rapidapi_url):
@@ -165,10 +166,10 @@ def patient_tracing_stat(patient_tracing_api):
 			sources = ""
 		elif len(patient_data[patient_index]['sources']) > 0 :
 			sources = patient_data[patient_index]['sources'][0].encode('ascii', 'ignore').decode('ascii')
-		if("nationality" not in patient_data[patient_index]):
-			nationality = ""
-		elif (len(patient_data[patient_index]['nationality'])>0):
+		if (len(patient_data[patient_index]['nationality'])>0):
 			nationality = patient_data[patient_index]['nationality'][0].encode('ascii', 'ignore').decode('ascii')
+		else:
+			nationality = "Not Found"
 		place_attributes = patient_data[patient_index]['place_attributes']
 		foreign_visit = ""
 		place = ""
@@ -192,74 +193,6 @@ def patient_tracing_stat(patient_tracing_api):
 		text_file.write("Last Refreshed : "+ results["lastRefreshed"])
 		text_file.write("<br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>")
 		text_file.close()
-
-
-def patient_tracker(patient_tracing_api):
-		response = requests.request("GET", patient_tracing_api)
-		results = json.loads(response.text)
-
-		patient_data_df = pd.DataFrame(
-		columns=["PatientId","Reported On","OnSet Estimate","Age Estimate",
-		"Gender","City","District","State","Status","Remarks","Contracted From",
-		"News Source"])
-
-		#pd.options.display.max_rows
-		#pd.set_option('display.max_colwidth', -1)
-		patient_data = results["data"]["rawPatientData"]
-		for patient_index in range(len(patient_data)):
-			patient_id = "P"+str(patient_data[patient_index]['patientId']).encode('ascii', 'ignore').decode('ascii')
-			reported_on = patient_data[patient_index]['reportedOn'].encode('ascii', 'ignore').decode('ascii')
-			if("onsetEstimate" not in patient_data[patient_index]):
-				onset_estimate = ""
-			else:
-				onset_estimate = patient_data[patient_index]['onsetEstimate'].encode('ascii', 'ignore').decode('ascii')
-			if("ageEstimate" not in patient_data[patient_index]):
-				age_estimate = ""
-			else:
-				age_estimate = patient_data[patient_index]['ageEstimate'].encode('ascii', 'ignore').decode('ascii')
-			if("gender" not in patient_data[patient_index]):
-				gender = ""
-			else:
-				gender = patient_data[patient_index]['gender'].encode('ascii', 'ignore').decode('ascii')
-			if("city" not in patient_data[patient_index]):
-				city = ""
-			else:
-				city = patient_data[patient_index]['city'].encode('ascii', 'ignore').decode('ascii')
-			if("district" not in patient_data[patient_index]):
-				district = ""
-			else:
-				district = patient_data[patient_index]['district'].encode('ascii', 'ignore').decode('ascii')
-			if("state"not in patient_data[patient_index]):
-				state = ""
-			else:
-				state = patient_data[patient_index]['state'].encode('ascii', 'ignore').decode('ascii')
-			if("status" not in patient_data[patient_index]):
-				status = ""
-			else:
-				status = patient_data[patient_index]['status'].encode('ascii', 'ignore').decode('ascii')
-			if("notes" not in patient_data[patient_index]):
-				remarks = ""
-			else:
-				remarks = patient_data[patient_index]['notes'].encode('ascii', 'ignore').decode('ascii')
-			if("contractedFrom" not in patient_data[patient_index]):
-				contracted_from = ""
-			else:
-				contracted_from = patient_data[patient_index]['contractedFrom'].encode('ascii', 'ignore').decode('ascii')
-			if("sources" not in patient_data[patient_index]):
-				sources = ""
-			elif len(patient_data[patient_index]['sources']) > 0 :
-				sources = patient_data[patient_index]['sources'][0].encode('ascii', 'ignore').decode('ascii')
-
-			patient_data_df.loc[patient_index] = [patient_id,reported_on,onset_estimate,age_estimate,gender,city,district,state,status,remarks,contracted_from,sources]
-			patient_data_html = patient_data_df.to_html(index=False)
-			text_file = open("covid19_patient_tracking.html", "w")
-			text_file.write("<h2>Covid19 Patient Tracker</h2>")
-			text_file.write("<br>")
-			text_file.write(patient_data_html)
-			text_file.write("<br><br>")
-			text_file.write("Last Refreshed : "+ results["lastRefreshed"])
-			text_file.write("<br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>")
-			text_file.close()
 
 
 def patient_travel_history_stat(patient_travel_history_api):
@@ -295,6 +228,65 @@ def patient_travel_history_stat(patient_travel_history_api):
 		text_file.close()
 
 
+def timeseries_covid19_cases(rootnet_covid19_history_api):
+    response = requests.request("GET", rootnet_covid19_history_api)
+    results = json.loads(response.text)
+    days = results["data"]
+
+    header= ["ObservationDate","State","State Confirmed Indian","State Confirmed Foreigner",
+    "State Discharged","State Deaths","Cumulative Total","Cumulative Indian",
+    "Cumulative Foreigner","Cumulative Discharged","Cumulative Deaths","Untraceable"]
+    #for i in range(2,18):
+    today_dt = datetime.today().date()-timedelta(days=0)
+    print(today_dt)
+    timeseries_df= pd.DataFrame({})
+    for each_day in range(len(days)):
+        observation_date = results["data"][each_day]["day"]
+        if(str(today_dt) == observation_date):
+            summary = results["data"][each_day]["summary"]
+            total = summary["total"]
+            confirmed_indian = summary["confirmedCasesIndian"]
+            confirmed_foreigner = summary["confirmedCasesForeign"]
+            discharged = summary["discharged"]
+            deaths = summary["deaths"]
+            confirmed_untraceable = summary["confirmedButLocationUnidentified"]
+
+            timeseries_df_state = pd.DataFrame(columns=header)
+            regional = results["data"][each_day]["regional"]
+            for region in range(len(regional)):
+                state = regional[region]["loc"]
+                state_confirmed_indian = regional[region]["confirmedCasesIndian"]
+                state_confirmed_foreigner = regional[region]["confirmedCasesForeign"]
+                state_discharged = regional[region]["discharged"]
+                state_deaths = regional[region]["deaths"]
+
+                timeseries_df_state.loc[region] = [observation_date,state,state_confirmed_indian,
+                state_confirmed_foreigner,state_discharged,state_deaths,total,confirmed_indian,confirmed_foreigner,discharged,deaths,confirmed_untraceable]
+            timeseries_df=timeseries_df.append(timeseries_df_state)
+            break
+        else:
+            continue
+    timeseries_df.to_csv('Indian_State_Timeseries.csv',index=False,mode='a',header=None)
+    put_to_html('Indian_State_Timeseries.csv',header)
+
+
+def put_to_html(filename,header):
+    timeseries_df = pd.read_csv(filename,header=None)
+    #print(timeseries_df.head())
+    timeseries_df.columns=header
+    timeseries_df_html = timeseries_df.sort_values(by='ObservationDate', ascending=False).to_html(index=False)
+
+    text_file = open("historical_timeseries_indian_state.html", "w")
+    text_file.write("<h2>Historical Indian States Covid19 Cases</h2>")
+    text_file.write("<br>")
+    text_file.write(timeseries_df_html)
+    text_file.write("<br>Last Refreshed : ")
+    text_file.write("<br><br>")
+    text_file.write("<br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>")
+    text_file.close()
+        #print(timeseries_df)
+
+
 if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
 
@@ -310,21 +302,23 @@ if __name__=='__main__':
 	statewise_tracing_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
 	patient_travel_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
 
-	print("Covid19 Monitor")
-	rapidapi_monitor(rapidapi_url)
 
-	print("Indian State Covid19 Monitor")
-	agg_stat_api(rootnet_agg_stat_api)
 
-	print("Indian Hospital Infrastructure")
-	agg_hospital_stat(rootnet_hospital_bed_stat_api)
-
-	print("Patient Tracking Monitor")
-	patient_tracker(patient_tracing_api)
-
-	print("Patient Travel History Monitor")
-	patient_travel_history_stat(patient_travel_history_api)
-
-	print("")
+	# print("Covid19 Monitor")
+	# rapidapi_monitor(rapidapi_url)
+    #
+	# print("Indian State Covid19 Monitor")
+	# agg_stat_api(rootnet_agg_stat_api)
+    #
+	# print("Indian Hospital Infrastructure")
+	# agg_hospital_stat(rootnet_hospital_bed_stat_api)
+    #
+	# print("Patient Tracking Monitor")
+	# patient_tracing_stat(patient_tracing_api)
+    #
+	# print("Patient Travel History Monitor")
+	# patient_travel_history_stat(patient_travel_history_api)
+	#print("Historical Indian State Covid19 Cases")
+	#timeseries_covid19_cases(rootnet_covid19_history_api)
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
