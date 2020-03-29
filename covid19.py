@@ -295,6 +295,59 @@ def patient_travel_history_stat(patient_travel_history_api):
 		text_file.close()
 
 
+def timeseries_covid19_cases(rootnet_covid19_history_api):
+    response = requests.request("GET", rootnet_covid19_history_api)
+    results = json.loads(response.text)
+    days = results["data"]
+
+    header= ["ObservationDate","State","State Confirmed Indian","State Confirmed Foreigner",
+    "State Discharged","State Deaths","Cumulative Total","Cumulative Indian",
+    "Cumulative Foreigner","Cumulative Discharged","Cumulative Deaths","Untraceable"]
+
+    timeseries_df= pd.DataFrame({})
+    for each_day in range(len(days)):
+        observation_date = results["data"][each_day]["day"]
+        summary = results["data"][each_day]["summary"]
+        total = summary["total"]
+        confirmed_indian = summary["confirmedCasesIndian"]
+        confirmed_foreigner = summary["confirmedCasesForeign"]
+        discharged = summary["discharged"]
+        deaths = summary["deaths"]
+        confirmed_untraceable = summary["confirmedButLocationUnidentified"]
+
+        timeseries_df_state = pd.DataFrame(columns=header)
+        regional = results["data"][each_day]["regional"]
+        for region in range(len(regional)):
+            state = regional[region]["loc"]
+            state_confirmed_indian = regional[region]["confirmedCasesIndian"]
+            state_confirmed_foreigner = regional[region]["confirmedCasesForeign"]
+            state_discharged = regional[region]["discharged"]
+            state_deaths = regional[region]["deaths"]
+
+            timeseries_df_state.loc[region] = [observation_date,state,state_confirmed_indian,
+            state_confirmed_foreigner,state_discharged,state_deaths,total,confirmed_indian,confirmed_foreigner,discharged,deaths,confirmed_untraceable]
+        timeseries_df=timeseries_df.append(timeseries_df_state)
+
+    timeseries_df.to_csv('Indian_State_Timeseries.csv',index=False,mode='w',header=None)
+    put_to_html('Indian_State_Timeseries.csv',header,results['lastRefreshed'])
+
+
+def put_to_html(filename,header,last_updated):
+    timeseries_df = pd.read_csv(filename,header=None)
+    #print(timeseries_df.head())
+    timeseries_df.columns=header
+    timeseries_df_html = timeseries_df.sort_values(by='ObservationDate', ascending=False).to_html(index=False)
+
+    text_file = open("historical_timeseries_indian_state.html", "w")
+    text_file.write("<h2>Historical Indian States Covid19 Cases</h2>")
+    text_file.write("<br>")
+    text_file.write(timeseries_df_html)
+    text_file.write("<br>Last Refreshed : "+last_updated)
+    text_file.write("<br><br>")
+    text_file.write("<br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>")
+    text_file.close()
+
+
 if __name__=='__main__':
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
 
@@ -325,6 +378,7 @@ if __name__=='__main__':
 	print("Patient Travel History Monitor")
 	patient_travel_history_stat(patient_travel_history_api)
 
-	print("")
+	print("Historical Indian State Covid19 Cases")
+	timeseries_covid19_cases(rootnet_covid19_history_api)
 	#print(rapidapi_stat.head())
 	#df.to_csv('india_covid19.csv',index=False)
