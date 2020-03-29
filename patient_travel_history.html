@@ -1,3126 +1,384 @@
 <h2>Patient Travel History</h2><br><table border="1" class="dataframe">
   <thead>
     <tr style="text-align: right;">
-      <th>Id</th>
-      <th>Location</th>
-      <th>Address</th>
-      <th>Source</th>
-      <th>Lat/Long</th>
-      <th>Travel Mode</th>
-      <th>PatientId</th>
-      <th>Place Name</th>
-      <th>Time From</th>
-      <th>Time To</th>
-      <th>Visit Type</th>
+      <th>ObservationDate</th>
+      <th>State</th>
+      <th>State Confirmed Indian</th>
+      <th>State Confirmed Foreigner</th>
+      <th>State Discharged</th>
+      <th>State Deaths</th>
+      <th>Cumulative Total</th>
+      <th>Cumulative Indian</th>
+      <th>Cumulative Foreigner</th>
+      <th>Cumulative Discharged</th>
+      <th>Cumulative Deaths</th>
+      <th>Untraceable</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td>1</td>
-      <td></td>
-      <td>Hotel Aryas, Kuthattukulam, Muvattupuzha road</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.8614231,76.5900643</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>29/02/2020 10:30:00</td>
-      <td>29/02/2020 11:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>2</td>
-      <td></td>
-      <td>Suresh Hotel Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3823686,76.779199</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>01/03/2020 21:30:00</td>
-      <td>01/03/2020 23:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td></td>
-      <td>Post Office Ranni Pazvangadi, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3757533,76.7763825</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>02/03/2020 11:00:00</td>
-      <td>02/03/2020 11:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>4</td>
-      <td></td>
-      <td>Knanaya Church, Pazvangadi Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.375753,76.7698164</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>02/03/2020 11:30:00</td>
-      <td>02/03/2020 12:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>5</td>
-      <td></td>
-      <td>Post Office Ranni Pazvangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3757533,76.7763825</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>02/03/2020 12:00:00</td>
-      <td>02/03/2020 13:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>6</td>
-      <td></td>
-      <td>Golde Emporium, New Hypermarket</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.385127,76.7849146</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>02/03/2020 13:15:00</td>
-      <td>02/03/2020 14:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>7</td>
-      <td></td>
-      <td>Muthoot mini supermarket, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>02/03/2020 14:30:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>8</td>
-      <td></td>
-      <td>Imperial Backers, Punalur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.0164797,76.92397</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>02/03/2020 18:00:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>9</td>
-      <td></td>
-      <td>Relative house, Manjar PO, Punalur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.0158521,76.9097683</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>02/03/2020 19:00:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>10</td>
-      <td></td>
-      <td>SBI/SBT Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3772508,76.7756069</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>03/03/2020 12:00:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
+      <td>2020-03-26</td>
+      <td>Andhra Pradesh</td>
       <td>11</td>
-      <td></td>
-      <td>SBI/SBT Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3772508,76.7756069</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>04/03/2020 10:00:00</td>
-      <td>04/03/2020 10:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>12</td>
-      <td></td>
-      <td>Supreme Travels, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>04/03/2020 10:30:00</td>
-      <td>04/03/2020 11:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>13</td>
-      <td></td>
-      <td>UAE Exchange Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.263646,76.7829783</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>05/03/2020 11:45:00</td>
-      <td>05/03/2020 12:15:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>14</td>
-      <td></td>
-      <td>SP Office, Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2728908,76.7892299</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>05/03/2020 12:15:00</td>
-      <td>05/03/2020 12:45:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>15</td>
-      <td></td>
-      <td>Royal Studio, Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2611563,76.7879638,18</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>05/03/2020 12:45:00</td>
-      <td>05/03/2020 13:15:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>16</td>
-      <td></td>
-      <td>Josco Jewellery, Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2661764,76.7809417</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>05/03/2020 13:15:00</td>
-      <td>05/03/2020 14:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>17</td>
-      <td></td>
-      <td>Ranni Gate Hotel, Bar</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.386206,76.7863243</td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>05/03/2020 15:00:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>18</td>
-      <td></td>
-      <td>Admitted to Hospital. Probably Pathanamthita General Hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P35</td>
-      <td></td>
-      <td>06/03/2020</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>19</td>
-      <td></td>
-      <td>Kozhikode International Airport</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1397276,75.948596</td>
-      <td>Taxi</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 03:30</td>
-      <td>13/03/2020 05:00</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>20</td>
-      <td></td>
-      <td>Indian Coffe House, Nuts street, Adakkatheru, Vadakara</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.6015612,75.5910405</td>
-      <td>Taxi</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 06:20</td>
-      <td>13/03/2020 06:50</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>21</td>
-      <td></td>
-      <td>General Hospital, Mahe</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.6995079,75.5344015</td>
-      <td>Taxi</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 07:00</td>
-      <td>13/03/2020 07:20</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>22</td>
-      <td></td>
-      <td>Residence at palloor, Mahe</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.7208115,75.5349187</td>
-      <td>Ambulance</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 07:30</td>
-      <td>13/03/2020 07:30</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>23</td>
-      <td></td>
-      <td>Beach Hospital, Corona Ward, Kozhikkode</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.2566435,75.7685646</td>
-      <td>Autorikshaw</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 15:30</td>
-      <td>13/03/2020 17:30</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>24</td>
-      <td></td>
-      <td>Railway Station platform 4, Kozhikkode</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.2486712,75.7781127</td>
-      <td>Mangala Express, Sleeper</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 17:50</td>
-      <td>13/03/2020 18:06</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>25</td>
-      <td></td>
-      <td>Railway Station Platform 1, Thalasserry</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.7531875,75.4919971</td>
-      <td>Autorikshaw</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 19:09</td>
-      <td>13/03/2020 19:09</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>26</td>
-      <td></td>
-      <td>Residence at palloor, Mahe</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.7208115,75.5349187</td>
-      <td>Ambulance</td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 19:45</td>
-      <td>13/03/2020 19:45</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>27</td>
-      <td></td>
-      <td>General Hospital , Mahe</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.6995079,75.5344015</td>
-      <td></td>
-      <td>P139</td>
-      <td></td>
-      <td>13/03/2020 21:45</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>28</td>
-      <td></td>
-      <td>Arrival at Karipur airport</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1397276,75.948596</td>
-      <td>Air India Flight No. AI 960 (Jeddah to Karipur)</td>
-      <td>P118</td>
-      <td></td>
-      <td>09/03/2020 08:05</td>
-      <td></td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>29</td>
-      <td></td>
-      <td>Travel in an autocab and stopped outside relatives house at Shappinkunu</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1792876,76.144535</td>
-      <td>Autocab</td>
-      <td>P118</td>
-      <td></td>
-      <td>09/03/2020 10:30</td>
-      <td></td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>30</td>
-      <td></td>
-      <td>Halt at relatives house, Mattukkulam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>09/03/2020 11:00</td>
-      <td>09/03/2020 11:25</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>31</td>
-      <td></td>
-      <td>Travel and halt at relatives house at Santhinagar, Vaniyambalam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1878099,76.2580323</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>09/03/2020 12:00</td>
-      <td>09/03/2020 12:30</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>32</td>
-      <td></td>
-      <td>Continued travel and reached home Santhinagar, Vaniyambalam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1878099,76.2580323</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>09/03/2020 12:30</td>
-      <td>09/03/2020 13:00</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>33</td>
-      <td></td>
-      <td>Private Medicals near Shanthi Medicals,  Wandoor</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.192934,76.2251387</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>09/03/2020 18:20</td>
-      <td>09/03/2020 18:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>34</td>
-      <td></td>
-      <td>Nebulised at Micromax Private Lab Wandoor</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>09/03/2020 18:30</td>
-      <td>09/03/2020 18:45</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>35</td>
-      <td></td>
-      <td>Nebulised at Micromax Private Lab Wandoor (2nd time)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>10/03/2020 08:00</td>
-      <td>10/03/2020 08:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>36</td>
-      <td></td>
-      <td>VMB clinic Vaniyambalam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1878099,76.2580323</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>10/03/2020 12:30</td>
-      <td>10/03/2020 12:40</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>37</td>
-      <td></td>
-      <td>Stayed at home Santhinagar, Vaniyambalam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1878099,76.2580323</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>10/03/2020 13:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>38</td>
-      <td></td>
-      <td>Tavel to Talook Hospital Wandoor for consultation</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.192934,76.2251387</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>11/03/2020 18:30</td>
-      <td></td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>39</td>
-      <td></td>
-      <td>Traveled back home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1878099,76.2580323</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>10/03/2020 19:30</td>
-      <td></td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>40</td>
-      <td></td>
-      <td>Stayed at home Santhinagar, Vaniyambalam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1878099,76.2580323</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>12/03/2020</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>41</td>
-      <td></td>
-      <td>Consultation at THQ Hospital Wandoor</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.192934,76.2251387</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>13/03/2020 16:30</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>42</td>
-      <td></td>
-      <td>Reached home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1878099,76.2580323</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>13/03/2020 19:30</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>43</td>
-      <td></td>
-      <td>Admitted at Government Medical College, Manjeri</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1177955,76.1199936</td>
-      <td></td>
-      <td>P118</td>
-      <td></td>
-      <td>13/03/2020 20:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>44</td>
-      <td></td>
-      <td>Flight; USA to Bengaluru via Heathrow, London</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>13.1986348,77.7044041</td>
-      <td></td>
-      <td>P43</td>
-      <td></td>
-      <td>06/03/2020</td>
-      <td>08/03/2020 04:30</td>
-      <td>travel</td>
-    </tr>
-    <tr>
-      <td>45</td>
-      <td></td>
-      <td>Bengaluru Airport to Residence</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P43</td>
-      <td></td>
-      <td>08/03/2020 04:30</td>
-      <td>08/03/2020 06:15</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>46</td>
-      <td></td>
-      <td>RGICD Visit to provide test samples</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.938365,77.5885142</td>
-      <td></td>
-      <td>P43</td>
-      <td></td>
-      <td>08/03/2020 14:30</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
       <td>47</td>
-      <td></td>
-      <td>Quarantined at Home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P43</td>
-      <td></td>
-      <td>08/03/2020 16:00</td>
-      <td>09/03/2020 20:30</td>
-      <td>placeVisit</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>48</td>
-      <td></td>
-      <td>Taken in ambulance to RGICD</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.938365,77.5885142</td>
-      <td></td>
-      <td>P43</td>
-      <td></td>
-      <td>09/02/2020 20:30</td>
-      <td></td>
-      <td>placeVisit</td>
+      <td>2020-03-26</td>
+      <td>Bihar</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>49</td>
-      <td></td>
-      <td>Travel from Austin, TX to New York (JFK)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>40.6413111,-73.7803278</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>28/02/2020 12:30</td>
-      <td>28/02/2020 16:11</td>
-      <td>travel</td>
+      <td>2020-03-26</td>
+      <td>Chandigarh</td>
+      <td>7</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>50</td>
-      <td></td>
-      <td>JFK Airport, New York</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>40.6413111,-73.7803278</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>28/02/2020 16:11</td>
-      <td>28/02/2020 23:00</td>
-      <td>placeVisit</td>
+      <td>2020-03-26</td>
+      <td>Chhattisgarh</td>
+      <td>6</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>51</td>
-      <td></td>
-      <td>Travel from New York to Dubai</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>25.2531745,55.3634841</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>28/02/2020 23:00</td>
-      <td>29/02/2020 20:25</td>
-      <td>travel</td>
+      <td>2020-03-26</td>
+      <td>Delhi</td>
+      <td>35</td>
+      <td>1</td>
+      <td>6</td>
+      <td>1</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>52</td>
-      <td></td>
-      <td>Dubai Airport</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>25.2531745,55.3634841</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>29/02/2020 20:25</td>
-      <td>01/03/2020 03:40</td>
-      <td>placeVisit</td>
+      <td>2020-03-26</td>
+      <td>Goa</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>53</td>
-      <td></td>
-      <td>Travel from Dubai to Bengaluru</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>13.1986348,77.7044041</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>01/03/2020 03:40</td>
-      <td>01/03/2020 08:50</td>
-      <td>travel</td>
+      <td>2020-03-26</td>
+      <td>Gujarat</td>
+      <td>42</td>
+      <td>1</td>
+      <td>0</td>
+      <td>3</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>54</td>
-      <td>Approximate</td>
-      <td>Travel from Bengaluru Airport to Residence</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9645669,77.7190231</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>01/03/2020 09:30</td>
-      <td>01/03/2020 11:00</td>
-      <td>travel</td>
+      <td>2020-03-26</td>
+      <td>Haryana</td>
+      <td>16</td>
+      <td>14</td>
+      <td>11</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
+      <td>2020-03-26</td>
+      <td>Himachal Pradesh</td>
+      <td>3</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Jammu and Kashmir</td>
+      <td>13</td>
+      <td>0</td>
+      <td>1</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Karnataka</td>
       <td>55</td>
-      <td>Accurate</td>
-      <td>Lunch at Paradise Biriyani Restaurant</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9572489,77.7428406</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>01/03/2020 14:00</td>
-      <td></td>
-      <td>placeVisit</td>
+      <td>0</td>
+      <td>3</td>
+      <td>2</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>56</td>
-      <td>Accurate</td>
-      <td>Shopping at Loyal City Supermarket</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9838874,77.7418193</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>02/03/2020 14:00</td>
-      <td>02/03/2020 15:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>57</td>
-      <td>Accurate</td>
-      <td>Office - Dell, Divyasree Greens</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9527286,77.6392458</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>02/03/2020 16:00</td>
-      <td>02/03/2020 22:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>58</td>
-      <td>Accurate</td>
-      <td>Cinema, Forum Value Mall</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.959711,77.7461103</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>03/03/2020 10:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>59</td>
-      <td>Accurate</td>
-      <td>Office - Dell, Divyasree Greens</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9527286,77.6392458</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>03/03/2020 14:00</td>
-      <td>03/03/2020 22:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>60</td>
-      <td>Accurate</td>
-      <td>RXDX Clinic for Checkup; Referred then to Manipal Hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9768569,77.7081903</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>05/03/2020 10:30</td>
-      <td>05/03/2020 14:50</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>61</td>
-      <td>Approximate</td>
-      <td>Home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9645669,77.7190231</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>05/03/2020 15:30</td>
-      <td>08/03/2020 14:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>62</td>
-      <td>Accurate</td>
-      <td>Mediwave Medical Store and Loyal City Supermarket</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9838874,77.7418193</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>08/03/2020 14:30</td>
-      <td>08/03/2020 15:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>63</td>
-      <td>Approximate</td>
-      <td>Home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9645669,77.7190231</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>08/03/2020 15:00</td>
-      <td>08/03/2020 20:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>64</td>
-      <td>Accurate</td>
-      <td>Admitted to RGICD</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.938365,77.5885142</td>
-      <td></td>
-      <td>P51</td>
-      <td></td>
-      <td>08/03/2020 20:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>65</td>
-      <td></td>
-      <td>halt at Jathanickal Cherukulangara Bakery, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P38</td>
-      <td></td>
-      <td>3/4/2020 06:00</td>
-      <td>3/4/2020 08:00</td>
-      <td>placevisit</td>
-    </tr>
-    <tr>
-      <td>66</td>
-      <td></td>
-      <td>halt at Marthoma Hospital, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3865747, 76.7833664</td>
-      <td></td>
-      <td>P38</td>
-      <td>Marthoma Hospital</td>
-      <td>03/04/2020 19:00</td>
-      <td>03/04/2020 20:30</td>
-      <td>placevisit</td>
-    </tr>
-    <tr>
-      <td>67</td>
-      <td></td>
-      <td>travel by Thachilethu Bus from Ranni to Kottayam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Bus</td>
-      <td>P38</td>
-      <td></td>
-      <td>03/06/2020 08:15</td>
-      <td>03/06/2020 10:15</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>68</td>
-      <td></td>
-      <td>halt at Palathara Textiles, Kanjikuzhy, Kottayam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.5966458, 76.5225306</td>
-      <td></td>
-      <td>P38</td>
-      <td>Palathara Fashions</td>
-      <td>03/06/2020 10:30</td>
-      <td>03/06/2020 11:15</td>
-      <td>placevisit</td>
-    </tr>
-    <tr>
-      <td>69</td>
-      <td></td>
-      <td>travel by Mahiniyam bus from Kanjikuzhy to Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Bus</td>
-      <td>P38</td>
-      <td></td>
-      <td>03/06/2020 14:00</td>
-      <td>03/06/2020 16:00</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>70</td>
-      <td></td>
-      <td>Admitted to hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P38</td>
-      <td></td>
-      <td>8/3/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>71</td>
-      <td></td>
-      <td>halt at Jathanickal Cherukulangara Bakery, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P39</td>
-      <td></td>
-      <td>3/4/2020 06:00</td>
-      <td>3/4/2020 08:00</td>
-      <td>placevisit</td>
-    </tr>
-    <tr>
-      <td>72</td>
-      <td>Accurate</td>
-      <td>halt at Marthoma Hospital, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3865747, 76.7833664</td>
-      <td></td>
-      <td>P39</td>
-      <td>Marthoma Hospital</td>
-      <td>03/04/2020 19:00</td>
-      <td>03/04/2020 20:30</td>
-      <td>placevisit</td>
-    </tr>
-    <tr>
-      <td>73</td>
-      <td></td>
-      <td>travel by Thachilethu Bus from Ranni to Kottayam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Bus</td>
-      <td>P39</td>
-      <td></td>
-      <td>03/06/2020 08:15</td>
-      <td>03/06/2020 10:15</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>74</td>
-      <td>Accurate</td>
-      <td>halt at Palathara Textiles, Kanjikuzhy, Kottayam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.5966458, 76.5225306</td>
-      <td></td>
-      <td>P39</td>
-      <td>Palathara Fashions</td>
-      <td>03/06/2020 10:30</td>
-      <td>03/06/2020 11:15</td>
-      <td>placevisit</td>
-    </tr>
-    <tr>
-      <td>75</td>
-      <td></td>
-      <td>travel by Mahiniyam bus from Kanjikuzhy to Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Bus</td>
-      <td>P39</td>
-      <td></td>
-      <td>03/06/2020 14:00</td>
-      <td>03/06/2020 16:00</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>76</td>
-      <td></td>
-      <td>Admitted to hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P39</td>
-      <td></td>
-      <td>8/3/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>77</td>
-      <td>Accurate</td>
-      <td>Was at Hotel Aaryas on Kuthattukulum Muvattupuzha Road</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.8614227, 76.5813094</td>
-      <td></td>
-      <td>R2</td>
-      <td>hotel Aryaas Koothattukulam Muvattupuzha road</td>
-      <td>29/02/2020 10.30 AM</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>78</td>
-      <td></td>
-      <td>Relative's house in Punalur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>R2</td>
-      <td></td>
-      <td>03/02/2020 10.30 AM</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>79</td>
-      <td>Accurate</td>
-      <td>Shopping at Golden Hypermarket, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3839593, 76.785245</td>
-      <td></td>
-      <td>R2</td>
-      <td>Golden Hyper Market</td>
-      <td>03/03/2020 11.00 AM</td>
-      <td>03/03/2020 12.00 PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>80</td>
-      <td></td>
-      <td>Was at Marthoma Private clinic, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>R2</td>
-      <td></td>
-      <td>04/03/2020</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>81</td>
-      <td>Accurate</td>
-      <td>Josco Jewellers Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2744739,76.7022866</td>
-      <td></td>
-      <td>R2</td>
-      <td></td>
-      <td>03/05/2020 12.00 PM</td>
-      <td>05/03/2020 3.00 PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>82</td>
-      <td>Accurate</td>
-      <td>Hotel Rani Gate, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3862113,76.7863243</td>
-      <td></td>
-      <td>R2</td>
-      <td></td>
-      <td>03/05/2020 3.00 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>83</td>
-      <td>Accurate</td>
-      <td>AM Bakers Kottayam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.5923763,76.5199522</td>
-      <td></td>
-      <td>R2</td>
-      <td></td>
-      <td>03/05/2020 8.30 PM</td>
-      <td>05/03/2020 9.00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>84</td>
-      <td>Approximate</td>
-      <td>Dr. Vinod Mani's clinic, Chengalam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.6163845,76.7004489</td>
-      <td></td>
-      <td>R2</td>
-      <td></td>
-      <td>03/06/2020 10.30 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>85</td>
-      <td>Accurate</td>
-      <td>Admitted in Medical College hospital, Kottayam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.6327636,76.5189227</td>
-      <td></td>
-      <td>R3</td>
-      <td></td>
-      <td>03/082020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>86</td>
-      <td>Accurate</td>
-      <td>Austin Airport US</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>39.468877,-117.1982217</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>02/28/2020 12.30 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>87</td>
-      <td>Accurate</td>
-      <td>Place JFK - US, NewYork</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>40.6413151,-73.7803278</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>02/28/2020 4.11 PM</td>
-      <td>28/02/2020 11.00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>88</td>
-      <td>Accurate</td>
-      <td>Place Dubai</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>25.2531793,55.3634841</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>02/29/2020 8.25 PM</td>
-      <td>29/02/2020 3.40 AM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>89</td>
-      <td>Accurate</td>
-      <td>Bengaluru Airport</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>13.19864, 77.7044041</td>
-      <td></td>
-      <td>P42</td>
-      <td>Kempegowda International Airport Bengaluru</td>
-      <td>03/1/2020 8.50 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>90</td>
-      <td>Approximate</td>
-      <td>Place: Whitefield</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9645669,77.7190231</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>03/1/2020 11.00 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>91</td>
-      <td>Accurate</td>
-      <td>Hotel Paradise Biryani</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9572489,77.7428406</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>03/1/2020 2.00 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>92</td>
-      <td>Accurate</td>
-      <td>Place Loyal City Super Market</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9594973, 77.7462004</td>
-      <td></td>
-      <td>P42</td>
-      <td>Loyal World Market</td>
-      <td>03/2/2020 2.00 PM</td>
-      <td>2/03/2020 3.00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>93</td>
-      <td>Accurate</td>
-      <td>Office: DELL Divya Shree Gardens</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9599764, 77.6783478</td>
-      <td></td>
-      <td>P42</td>
-      <td>dell near Divyasree Technopark Main Road, Kundalahalli, Brookefield, Bengaluru, Karnataka</td>
-      <td>03/2/2020 4.00 PM</td>
-      <td>2/03/2020 10.00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>94</td>
-      <td>Accurate</td>
-      <td>Movie theatre Forum Value Mall</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9594062, 77.7444503</td>
-      <td></td>
-      <td>P42</td>
-      <td>Forum Value Mall</td>
-      <td>03/2/2020 10.00 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>95</td>
-      <td>Accurate</td>
-      <td>DELL Divyashree Gardens</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9599764, 77.6783478</td>
-      <td></td>
-      <td>P42</td>
-      <td>dell near Divyasree Technopark Main Road, Kundalahalli, Brookefield, Bengaluru, Karnataka</td>
-      <td>03/3/2020 2.00 PM</td>
-      <td>3/03/2020 10.30 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>96</td>
-      <td>Accurate</td>
-      <td>RXDX Clinic</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9768621, 77.7081903</td>
-      <td></td>
-      <td>P42</td>
-      <td>RxDx Healthcare Whitefield</td>
-      <td>03/5/2020 10.30 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>97</td>
-      <td>Accurate</td>
-      <td>Referred to Manipal Hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9880922, 77.7262703</td>
-      <td></td>
-      <td>P42</td>
-      <td>Manipal Hospital Whitefield</td>
-      <td>03/5/2020 2.50 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>98</td>
-      <td>Approximate</td>
-      <td>Home, Whitefield</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9645669,77.7190231</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>03/5/2020 3.30 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>99</td>
-      <td>Approximate</td>
-      <td>Home, Whitefield</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9645669,77.7190231</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>03/06/2020</td>
-      <td>07/03/2020</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>100</td>
-      <td>Accurate</td>
-      <td>Place: Medway Medical store and Loyal City Market</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9594973, 77.7462004</td>
-      <td></td>
-      <td>P42</td>
-      <td>Loyal World Market</td>
-      <td>03/8/2020 2.30 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>101</td>
-      <td>Approximate</td>
-      <td>Home, Whitefield</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9645669,77.7190231</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>03/8/2020 3.00</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>102</td>
-      <td>Accurate</td>
-      <td>Admitted to RGICD</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.938365,77.5885142</td>
-      <td></td>
-      <td>P42</td>
-      <td></td>
-      <td>03/8/2020 8.00 pm</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>103</td>
-      <td>Accurate</td>
-      <td>Mumbai Airport from Greece</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>19.0895646,72.8634257</td>
-      <td></td>
-      <td>P73</td>
-      <td></td>
-      <td>03/06/2020 11.55 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>104</td>
-      <td></td>
-      <td>Mumbai Home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P73</td>
-      <td></td>
-      <td>03/06/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>105</td>
-      <td></td>
-      <td>Place: Bangalore. Travelled in taxi and reahed home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P73</td>
-      <td></td>
-      <td>03/08/2020 9.45 PM</td>
-      <td>03/08/2020 23:30</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>106</td>
-      <td></td>
-      <td>Home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P73</td>
-      <td></td>
-      <td>03/09/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>107</td>
-      <td>Accurate</td>
-      <td>Visited RGCID and sample was sent to NIV</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.938365,77.5885142</td>
-      <td></td>
-      <td>P73</td>
-      <td></td>
-      <td>03/10/2020 5.55 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>108</td>
-      <td>Accurate</td>
-      <td>Patient was shifted to Jayanagar General Hospital and admitted</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9262429, 77.5906121</td>
-      <td></td>
-      <td>P73</td>
-      <td>Jayanagar General Hospital</td>
-      <td>03/11/2020 8.30 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>109</td>
-      <td></td>
-      <td>BBMP surveillance team is doing surveillance</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P73</td>
-      <td></td>
-      <td>03/12/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
+      <td>2020-03-26</td>
+      <td>Kerala</td>
       <td>110</td>
-      <td></td>
-      <td>London Flight No. GF2</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/10/2020</td>
-      <td></td>
-      <td></td>
+      <td>8</td>
+      <td>6</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>111</td>
-      <td></td>
-      <td>Bahrain Flight No. GF0060</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/10/2020</td>
-      <td></td>
-      <td></td>
+      <td>2020-03-26</td>
+      <td>Ladakh</td>
+      <td>13</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>112</td>
-      <td>Accurate</td>
-      <td>Trivandram International Airport</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4834254,76.9176307</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/10/2020 5.00 AM</td>
-      <td></td>
-      <td></td>
+      <td>2020-03-26</td>
+      <td>Madhya Pradesh</td>
+      <td>20</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
     <tr>
-      <td>113</td>
-      <td>Accurate</td>
-      <td>Travelled by own car to Artech Square Kaithamukku, Pettah</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4901622,76.9322777</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/10/2020 5.45 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>114</td>
-      <td>Accurate</td>
-      <td>Travelled to General hospital, Trivandram by own car</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4954497,76.9390526</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020 8.00 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>115</td>
-      <td>Accurate</td>
-      <td>Walked to car parking area, General Hospital, Trivandram</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4954497,76.9390526</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>116</td>
-      <td>Accurate</td>
-      <td>Walked to OP ticket counter walking area GH Trivandram</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4954497,76.9390526</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>117</td>
-      <td>Accurate</td>
-      <td>COVID 19 OP Walking area</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4954497,76.9390526</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>118</td>
-      <td>Accurate</td>
-      <td>Isolation ward</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4954497,76.9390526</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>119</td>
-      <td>Accurate</td>
-      <td>General hospital front gate by auto</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4954497,76.9390526</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020 10.30 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>120</td>
-      <td></td>
-      <td>2 shops at Kaithamukku Opp.Co-operative bank</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
+      <td>2020-03-26</td>
+      <td>Maharashtra</td>
       <td>121</td>
-      <td>Accurate</td>
-      <td>Artech Square Security point</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4901622,76.9322777</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>122</td>
-      <td>Accurate</td>
-      <td>Artech Square</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4901622,76.9322777</td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020 10.45 AM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>123</td>
-      <td></td>
-      <td>reached Medical college hospital isolation ward through ambulance</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P87</td>
-      <td></td>
-      <td>03/11/2020 16:00</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>124</td>
-      <td></td>
-      <td>Flight No: SG54 SPICE JET,Calicut Airport</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1397276, 75.9507847</td>
-      <td></td>
-      <td>P1</td>
-      <td>Kozhikode International Airport</td>
-      <td>05.03.2020 9:30PM</td>
-      <td>05.03.2020 11:00PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>125</td>
-      <td></td>
-      <td>Hotel Malabar Plaza\n(Near Ramanattukara)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1780408, 75.8794302</td>
-      <td></td>
-      <td>P1</td>
-      <td>Hotel Malabar Plaza</td>
-      <td>05.03.2020 11.15 PM</td>
-      <td>05.03.2020 11.45 PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>126</td>
-      <td></td>
-      <td>Travel on road by \ntaxi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Taxi</td>
-      <td>P1</td>
-      <td></td>
-      <td>05.03.2020 11.45 PM</td>
-      <td>06.03.2020 04:00 AM</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>127</td>
-      <td></td>
-      <td>Patient Home \n( Home quarantine)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>06.03.2020 04:00 AM</td>
-      <td>07.03.2020 02:30pm</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>128</td>
-      <td></td>
-      <td>Private Consultation \n(Dr Home) \nLocation: Mathil</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>07.03.2020 02:30 PM</td>
-      <td>07.03.2020 02:40 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>129</td>
-      <td></td>
-      <td>On road by private car</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Private car</td>
-      <td>P1</td>
-      <td></td>
-      <td>07.03.2020 02:45 PM</td>
-      <td>07.03.2020 03:00 PM</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>130</td>
-      <td></td>
-      <td>Casuality,GMC Kannur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.0715235, 75.2917689</td>
-      <td></td>
-      <td>P1</td>
-      <td>Government Medical College Kannur</td>
-      <td>07.03.2020 03:30 PM</td>
-      <td>07.03.2020 03:35 PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>131</td>
-      <td></td>
-      <td>Isolation unit, GMC Kannur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>07.03.2020 03:35 PM</td>
-      <td>08.03.2020 12:00 AM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>132</td>
-      <td></td>
-      <td>Hospital Isolation, GMC Kannur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>08.03.2020 12:00 AM</td>
-      <td>08.03.2020 12:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>133</td>
-      <td></td>
-      <td>Hospital Isolation, GMC Kannur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>09.03.2020 12:00 AM</td>
-      <td>09.03.2020 12:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>134</td>
-      <td></td>
-      <td>Hospital Isolation, GMC Kannur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>10.03.2020 12:00AM</td>
-      <td>10.03.2020 04:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>135</td>
-      <td></td>
-      <td>Travel by private \ncar</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Private car</td>
-      <td>P1</td>
-      <td></td>
-      <td>10.03.2020 04:00 PM</td>
-      <td>10.03.2020 05:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>136</td>
-      <td></td>
-      <td>Patient reached his Home \n(Isolation)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>10.03.2020 05:00 PM</td>
-      <td>11.03.2020 12:00 AM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>137</td>
-      <td></td>
-      <td>Strict Home isolation</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>11.03.2020 12:00 AM</td>
-      <td>11.03.2020 12:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>138</td>
-      <td></td>
-      <td>Strict Home isolation</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>12.03.2020 12:00 AM</td>
-      <td>12.03.2020 09:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>139</td>
-      <td></td>
-      <td>Travelling in \nAmbulance \nby road</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Ambulance</td>
-      <td>P1</td>
-      <td></td>
-      <td>12.03.2020 09:00 PM</td>
-      <td>12.03.2020 10:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>140</td>
-      <td></td>
-      <td>Patient reached Isolation ward, GMC Kannur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P1</td>
-      <td></td>
-      <td>12.03.2020 10:00 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>141</td>
-      <td></td>
-      <td>Bangalore Airport - Came from USA through London,Heathrow</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>13.1986348, 77.7065928</td>
-      <td></td>
-      <td>P4</td>
-      <td>Kempegowda International Airport Bengaluru</td>
-      <td>08.03.2020 04:30 AM</td>
-      <td>08.03.2020 06:15 AM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>142</td>
-      <td></td>
-      <td>HOME</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P4</td>
-      <td></td>
-      <td>08.03.2020 06:15 AM</td>
-      <td>08.03.2020 02:30 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>143</td>
-      <td></td>
-      <td>Visited RGICD at 02:30pm and sample was collected and sent to NIV Bangalore</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9056374, 77.5404383</td>
-      <td></td>
-      <td>P4</td>
-      <td>Health</td>
-      <td>08.03.2020 02:30 PM</td>
-      <td>08.03.2020 02:30 PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>144</td>
-      <td></td>
-      <td>Whole day he was under home quarantine</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P4</td>
-      <td></td>
-      <td>09:03.2020 12:00 AM</td>
-      <td>09.03.2020 08:30 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>145</td>
-      <td></td>
-      <td>Travlled through Ambulance and got admitted to RGICD,Bangalore</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Ambulance</td>
-      <td>P4</td>
-      <td></td>
-      <td>09.03.2020 08:30 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>146</td>
-      <td></td>
-      <td>Hyderabad airport and travelled to Kalburgi.</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P6</td>
-      <td></td>
-      <td>29:02:2020 12:30 PM</td>
-      <td>29:02:2020 05:00 PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>147</td>
-      <td></td>
-      <td>Had fever and family physician visited and gave treatment</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P7</td>
-      <td></td>
-      <td>06.03.2020</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>148</td>
-      <td></td>
-      <td>Treated at home by family doctor then shifted to private hospital and got admitted,\nSample was collected and was sent to VRDL,BMC &amp; RI\nPatient was discharged against medical advise at 10:00 PM</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P8</td>
-      <td></td>
-      <td>09.03.2020 10:00 AM</td>
-      <td>09.03.2020 10:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>149</td>
-      <td></td>
-      <td>Arrived at Trivandrum\nFlight QR506\nDoha to TVM</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.4834201, 76.9198194</td>
-      <td></td>
-      <td>P109</td>
-      <td>Trivandrum International Airport</td>
-      <td>02.03.2020 01:20AM</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>150</td>
-      <td></td>
-      <td>Ulloor Gardens</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P110</td>
-      <td></td>
-      <td>02.03.2020</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>151</td>
-      <td>Accurate</td>
-      <td>Hotel Bismi, Kumarapuram</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.5150455, 76.927428</td>
-      <td></td>
-      <td>P111</td>
-      <td>Hotel Bismi</td>
-      <td>02.03.2020 06:00 PM</td>
-      <td>02.03.2020 06:30 PM</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>152</td>
-      <td>Accurate</td>
-      <td>Hotel Ambadi Kannan,Medical College Junction</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.5215699, 76.9297051</td>
-      <td></td>
-      <td>P112</td>
-      <td>Ambadi Kannan Restaurant</td>
-      <td>03.03.2020 07:30 PM</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>153</td>
-      <td>Accurate</td>
-      <td>Hotel Bismi, Kumarapuram</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.5150455, 76.927428</td>
-      <td></td>
-      <td>P113</td>
-      <td></td>
-      <td>04.03.2020 06:00 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>154</td>
-      <td>Accurate</td>
-      <td>Hotel Thamarassery Churam</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.5201633,76.9273983</td>
-      <td></td>
-      <td>P114</td>
-      <td></td>
-      <td>05.03.2020 06:00 PM</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>155</td>
-      <td>Accurate</td>
-      <td>Margin free market,Kunnil,Medical College Junction</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.526249, 76.9282735</td>
-      <td></td>
-      <td>P115</td>
-      <td>Kunnil Margin Free Market</td>
-      <td>08.03.2020 07:30 PM</td>
-      <td>08.03.2020 08:30 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>156</td>
-      <td></td>
-      <td>Hotel Kochi Pedia</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P117</td>
-      <td></td>
-      <td>11.03.2020 05:00 PM</td>
-      <td>11:03:2020 06:00 PM</td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>157</td>
-      <td>Accurate</td>
-      <td>Suresh Hotel, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3823686, 76.7770106</td>
-      <td></td>
-      <td>P36</td>
-      <td>Suresh Hotel</td>
-      <td>03/01/2020 21:30</td>
-      <td>03/01/2020 23:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>158</td>
-      <td></td>
-      <td>Mini Shopee, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856464, 76.7829323</td>
-      <td></td>
-      <td>P36</td>
-      <td>Mini Super Shoppe</td>
-      <td>03/02/2020 09:50</td>
-      <td>03/02/2020 10:10</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>159</td>
-      <td></td>
-      <td>HP Petrol Pump, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P36</td>
-      <td></td>
-      <td>03/02/2020 10:15</td>
-      <td>3/2/2020 10:20:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>160</td>
-      <td></td>
-      <td>Ittiyapara Bus Stand, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3861945, 76.784884</td>
-      <td></td>
-      <td>P36</td>
-      <td>Ittiyappara Bus Stand</td>
-      <td>03/02/2020 10:25</td>
-      <td>3/2/2020 10:25:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>161</td>
-      <td></td>
-      <td>Post Office, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3757586, 76.7763825</td>
-      <td></td>
-      <td>P36</td>
-      <td>Ranni Post Office</td>
-      <td>03/02/2020 11:00</td>
-      <td>3/2/2020 11:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>162</td>
-      <td></td>
-      <td>Knanaya Church, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3731741, 76.7865693</td>
-      <td></td>
-      <td>P36</td>
-      <td>St. Kuriakose Knanaya Church</td>
-      <td>3/2/2020 11:30:00</td>
-      <td>3/2/2020 12:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>163</td>
-      <td></td>
-      <td>Post Office, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3757586, 76.7763825</td>
-      <td></td>
-      <td>P36</td>
-      <td>Ranni Post Office</td>
-      <td>3/2/2020 12:00:00</td>
-      <td>3/2/2020 13:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>164</td>
-      <td></td>
-      <td>Golden Emporium, New Hypermarket, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3863053, 76.7845842</td>
-      <td></td>
-      <td>P36</td>
-      <td>Golden Emporium</td>
-      <td>3/2/2020 13:15:00</td>
-      <td>3/2/2020 14:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>165</td>
-      <td></td>
-      <td>Mini Shopee, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856464, 76.7829323</td>
-      <td></td>
-      <td>P36</td>
-      <td>Mini Super Shoppe</td>
-      <td>3/2/2020 14:30:00</td>
-      <td>3/2/2020 14:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>166</td>
-      <td></td>
-      <td>Imperial Bakery, Punalur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.0179739, 76.9248863</td>
-      <td></td>
-      <td>P36</td>
-      <td>Imperial Bakery</td>
-      <td>3/2/2020 18:00:00</td>
-      <td>3/2/2020 18:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>167</td>
-      <td></td>
-      <td>Maniyar, Punalur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.9941361, 76.9285812</td>
-      <td></td>
-      <td>P36</td>
-      <td>Maniyar, Punalur, Kerala</td>
-      <td>3/2/2020 19:00:00</td>
-      <td>3/2/2020 19:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>168</td>
-      <td></td>
-      <td>Mini Shopee, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856464, 76.7829323</td>
-      <td></td>
-      <td>P36</td>
-      <td>Mini Super Shoppe</td>
-      <td>3/3/2020 10:00:00</td>
-      <td>3/3/2020 10:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>169</td>
-      <td></td>
-      <td>SBI/SBT, Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3840161, 76.783953</td>
-      <td></td>
-      <td>P36</td>
-      <td>State Bank of India</td>
-      <td>3/3/2020 10:30:00</td>
-      <td>3/3/2020 10:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>170</td>
-      <td></td>
-      <td>ESAF Bank, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3905569, 76.786513</td>
-      <td></td>
-      <td>P36</td>
-      <td>ESAF Small Finance Bank</td>
-      <td>3/3/2020 11:00:00</td>
-      <td>3/3/2020 11:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>171</td>
-      <td></td>
-      <td>Grama Panchayat, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3766548, 76.7769429</td>
-      <td></td>
-      <td>P36</td>
-      <td>RANNI GRAMA PANCHAYAT</td>
-      <td>3/3/2020 11:35:00</td>
-      <td>3/3/2020 11:50:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>172</td>
-      <td></td>
-      <td>SBI/SBT, Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3840161, 76.783953</td>
-      <td></td>
-      <td>P36</td>
-      <td>State Bank of India</td>
-      <td>3/3/2020 12:00:00</td>
-      <td>3/3/2020 12:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>173</td>
-      <td></td>
-      <td>Grand Bakery, Ranni, Ittypara</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3833808, 76.7809324</td>
-      <td></td>
-      <td>P36</td>
-      <td>Grand Bakery</td>
-      <td>3/3/2020 12:35:00</td>
-      <td>3/3/2020 12:45:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>174</td>
-      <td></td>
-      <td>SBI/SBT, Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3840161, 76.783953</td>
-      <td></td>
-      <td>P36</td>
-      <td>State Bank of India</td>
-      <td>3/4/2020 10:00:00</td>
-      <td>3/4/2020 10:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>175</td>
-      <td></td>
-      <td>Supreme Travels, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P36</td>
-      <td></td>
-      <td>3/4/2020 10:30:00</td>
-      <td>3/4/2020 11:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>176</td>
-      <td></td>
-      <td>Marthoma Hospital, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3865747, 76.7833664</td>
-      <td></td>
-      <td>P36</td>
-      <td>Marthoma Hospital</td>
-      <td>3/4/2020 20:20:00</td>
-      <td>3/4/2020 20:20:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>177</td>
-      <td></td>
-      <td>Baby Palace, Ranni, Ittiyapara</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P36</td>
-      <td></td>
-      <td>3/5/2020 11:30:00</td>
-      <td>3/5/2020 11:45:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>178</td>
-      <td></td>
-      <td>Unimoni/ UAE Exchange, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856113, 76.7829583</td>
-      <td></td>
-      <td>P36</td>
-      <td>CURRENCY EXCHANGE %7C AIR TICKET %7CGOLD LOAN, UAE Exchange - RANNI</td>
-      <td>3/5/2020 11:45:00</td>
-      <td>3/5/2020 12:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>179</td>
-      <td></td>
-      <td>SP Office, Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2726418, 76.7889012</td>
-      <td></td>
-      <td>P36</td>
-      <td>SP Office Junction</td>
-      <td>3/5/2020 12:15:00</td>
-      <td>3/5/2020 12:45:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>180</td>
-      <td></td>
-      <td>Royal Studio, Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P36</td>
-      <td></td>
-      <td>3/5/2020 12:45:00</td>
-      <td>3/5/2020 13:15:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>181</td>
-      <td></td>
-      <td>Josco Jewlerry</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2661817, 76.7809417</td>
-      <td></td>
-      <td>P36</td>
-      <td>Josco Jewellery</td>
-      <td>3/5/2020 13:15:00</td>
-      <td>3/5/2020 14:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>182</td>
-      <td></td>
-      <td>Ranni Gate Hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3862792, 76.7809105</td>
-      <td></td>
-      <td>P36</td>
-      <td>Trinity Hospital Ranni</td>
-      <td>3/5/2020 15:00:00</td>
-      <td>3/5/2020 15:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>183</td>
-      <td></td>
-      <td>Hotel Aryas, Kuthattukulam, Muvattupuzha Road</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P37</td>
-      <td></td>
-      <td>02/29/2020 10:30</td>
-      <td>02/29/2020 11:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>184</td>
-      <td></td>
-      <td>Suresh Hotel, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3823686, 76.7770106</td>
-      <td></td>
-      <td>P37</td>
-      <td>Suresh Hotel</td>
-      <td>03/01/2020 21:30</td>
-      <td>03/01/2020 23:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>185</td>
-      <td></td>
-      <td>Mini Shopee, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856464, 76.7829323</td>
-      <td></td>
-      <td>P37</td>
-      <td>Mini Super Shoppe</td>
-      <td>03/02/2020 09:50</td>
-      <td>03/02/2020 10:10</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>186</td>
-      <td></td>
-      <td>HP Petrol Pump, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P37</td>
-      <td></td>
-      <td>03/02/2020 10:15</td>
-      <td>3/2/2020 10:20:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>187</td>
-      <td></td>
-      <td>Ittiyapara Bus Stand, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3861945, 76.784884</td>
-      <td></td>
-      <td>P37</td>
-      <td>Ittiyappara Bus Stand</td>
-      <td>03/02/2020 10:25</td>
-      <td>3/2/2020 10:25:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>188</td>
-      <td></td>
-      <td>Post Office, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3757586, 76.7763825</td>
-      <td></td>
-      <td>P37</td>
-      <td>Ranni Post Office</td>
-      <td>03/02/2020 11:00</td>
-      <td>3/2/2020 11:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>189</td>
-      <td></td>
-      <td>Knanaya Church, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3731741, 76.7865693</td>
-      <td></td>
-      <td>P37</td>
-      <td>St. Kuriakose Knanaya Church</td>
-      <td>3/2/2020 11:30:00</td>
-      <td>3/2/2020 12:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>190</td>
-      <td></td>
-      <td>Post Office, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3757586, 76.7763825</td>
-      <td></td>
-      <td>P37</td>
-      <td>Ranni Post Office</td>
-      <td>3/2/2020 12:00:00</td>
-      <td>3/2/2020 13:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>191</td>
-      <td></td>
-      <td>Golden Emporium, New Hypermarket, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3863053, 76.7845842</td>
-      <td></td>
-      <td>P37</td>
-      <td>Golden Emporium</td>
-      <td>3/2/2020 13:15:00</td>
-      <td>3/2/2020 14:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>192</td>
-      <td></td>
-      <td>Mini Shopee, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856464, 76.7829323</td>
-      <td></td>
-      <td>P37</td>
-      <td>Mini Super Shoppe</td>
-      <td>3/2/2020 14:30:00</td>
-      <td>3/2/2020 14:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>193</td>
-      <td></td>
-      <td>Imperial Bakery, Punalur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.0179739, 76.9248863</td>
-      <td></td>
-      <td>P37</td>
-      <td>Imperial Bakery</td>
-      <td>3/2/2020 18:00:00</td>
-      <td>3/2/2020 18:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>194</td>
-      <td></td>
-      <td>Maniyar, Punalur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>8.9941361, 76.9285812</td>
-      <td></td>
-      <td>P37</td>
-      <td>Maniyar, Punalur, Kerala</td>
-      <td>3/2/2020 19:00:00</td>
-      <td>3/2/2020 19:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>195</td>
-      <td></td>
-      <td>Mini Shopee, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856464, 76.7829323</td>
-      <td></td>
-      <td>P37</td>
-      <td>Mini Super Shoppe</td>
-      <td>3/3/2020 10:00:00</td>
-      <td>3/3/2020 10:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>196</td>
-      <td></td>
-      <td>SBI/SBT, Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3840161, 76.783953</td>
-      <td></td>
-      <td>P37</td>
-      <td>State Bank of India</td>
-      <td>3/3/2020 10:30:00</td>
-      <td>3/3/2020 10:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>197</td>
-      <td></td>
-      <td>ESAF Bank, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3905569, 76.786513</td>
-      <td></td>
-      <td>P37</td>
-      <td>ESAF Small Finance Bank</td>
-      <td>3/3/2020 11:00:00</td>
-      <td>3/3/2020 11:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>198</td>
-      <td></td>
-      <td>Grama Panchayat, Ranni, Pazhavangadi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3766548, 76.7769429</td>
-      <td></td>
-      <td>P37</td>
-      <td>RANNI GRAMA PANCHAYAT</td>
-      <td>3/3/2020 11:35:00</td>
-      <td>3/3/2020 11:50:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>199</td>
-      <td></td>
-      <td>SBI/SBT, Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3840161, 76.783953</td>
-      <td></td>
-      <td>P37</td>
-      <td>State Bank of India</td>
-      <td>3/3/2020 12:00:00</td>
-      <td>3/3/2020 12:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>200</td>
-      <td></td>
-      <td>Grand Bakery, Ranni, Ittypara</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3833861, 76.7809324</td>
-      <td></td>
-      <td>P37</td>
-      <td>Grand Bakery</td>
-      <td>3/3/2020 12:35:00</td>
-      <td>3/3/2020 12:45:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>201</td>
-      <td></td>
-      <td>SBI/SBT, Ranni, Thottamon</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3840161, 76.783953</td>
-      <td></td>
-      <td>P37</td>
-      <td>State Bank of India</td>
-      <td>3/4/2020 10:00:00</td>
-      <td>3/4/2020 10:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>202</td>
-      <td></td>
-      <td>Supreme Travels, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P37</td>
-      <td></td>
-      <td>3/4/2020 10:30:00</td>
-      <td>3/4/2020 11:30:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>203</td>
-      <td></td>
-      <td>Marthoma Hospital, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3865747, 76.7833664</td>
-      <td></td>
-      <td>P37</td>
-      <td>Marthoma Hospital</td>
-      <td>3/4/2020 20:20:00</td>
-      <td>3/4/2020 20:20:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>204</td>
-      <td></td>
-      <td>Baby Palace, Ranni, Ittiyapara</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P37</td>
-      <td></td>
-      <td>3/5/2020 11:30:00</td>
-      <td>3/5/2020 11:45:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>205</td>
-      <td></td>
-      <td>Unimoni/ UAE Exchange, Ranni</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3856113, 76.7829583</td>
-      <td></td>
-      <td>P37</td>
-      <td>CURRENCY EXCHANGE %7C AIR TICKET %7CGOLD LOAN, UAE Exchange - RANNI</td>
-      <td>3/5/2020 11:45:00</td>
-      <td>3/5/2020 12:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>206</td>
-      <td></td>
-      <td>SP Office, Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2726418, 76.7889012</td>
-      <td></td>
-      <td>P37</td>
-      <td>SP Office Junction</td>
-      <td>3/5/2020 12:15:00</td>
-      <td>3/5/2020 12:45:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>207</td>
-      <td></td>
-      <td>Royal Studio, Pathanamthitta</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P37</td>
-      <td></td>
-      <td>3/5/2020 12:45:00</td>
-      <td>3/5/2020 13:15:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>208</td>
-      <td></td>
-      <td>Josco Jewlerry</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.2661817, 76.7809417</td>
-      <td></td>
-      <td>P37</td>
-      <td>Josco Jewellery</td>
-      <td>3/5/2020 13:15:00</td>
-      <td>3/5/2020 14:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>209</td>
-      <td></td>
-      <td>Ranni Gate Hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>9.3862792, 76.7809105</td>
-      <td></td>
-      <td>P37</td>
-      <td>Trinity Hospital Ranni</td>
-      <td>3/5/2020 15:00:00</td>
-      <td>3/5/2020 15:00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>210</td>
-      <td></td>
-      <td>Met father at Fathers House Near KNZ Function hall, Kalaburagi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9541759, 74.8836158</td>
-      <td></td>
-      <td>P116</td>
-      <td>Mangalore International Airport</td>
-      <td>02/29/2020 0:00</td>
-      <td>02/29/2020 0:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>211</td>
-      <td></td>
-      <td>Stayed at own house Fort</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.6251924, 75.0875817</td>
-      <td></td>
-      <td>P116</td>
-      <td>Kasargod Govt medical collage</td>
-      <td>03/01/2020 00:00</td>
-      <td>03/02/2020 00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>212</td>
-      <td></td>
-      <td>Met father at Fathers House Near KNZ Function hall, Kalaburagi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.6251924, 75.0875817</td>
-      <td></td>
-      <td>P116</td>
-      <td>Kasargod Govt medical collage</td>
-      <td>03/03/2020 00:00</td>
-      <td>03/03/2020 00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>213</td>
-      <td></td>
-      <td>Stayed at own house Fort</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.6251924, 75.0875817</td>
-      <td></td>
-      <td>P116</td>
-      <td>Kasargod Govt medical collage</td>
-      <td>03/04/2020 00:00</td>
-      <td>03/05/2020 00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>214</td>
-      <td></td>
-      <td>Met father at Fathers House Near KNZ Function hall, Kalaburagi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.4974113, 75.0515372</td>
-      <td></td>
-      <td>P116</td>
-      <td>Bevinja - Bovikanam Road, Kerala 671542</td>
-      <td>03/06/2020 00:00</td>
-      <td>03/06/2020 00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>215</td>
-      <td></td>
-      <td>Stayed at own house Fort</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P116</td>
-      <td></td>
-      <td>03/07/2020 00:00</td>
-      <td>03/08/2020 00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>216</td>
-      <td></td>
-      <td>Accompanied patient 6 (father) in ambulance during his illness from Hyderabad to Kalaburagi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3447321, 76.8201453</td>
-      <td>Ambulance</td>
-      <td>P116</td>
-      <td>KNZ Function Hall</td>
-      <td>03/09/2020 00:00</td>
-      <td>03/09/2020 00:00</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>217</td>
-      <td></td>
-      <td>stayed at fathers house Near KNZ Function Hall, Kalaburagi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3404932, 76.8274257</td>
-      <td></td>
-      <td>P116</td>
-      <td>Gulbarga Fort, Halbarga, Brhampur, Gulbarga, Karnataka 585101</td>
-      <td>03/10/2020 00:00</td>
-      <td>03/10/2020 00:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>218</td>
-      <td></td>
-      <td>Admitted to ESI Hospital Kalaburagi</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3447321, 76.8201453</td>
-      <td></td>
-      <td>P116</td>
-      <td>KNZ Function Hall</td>
-      <td>03/11/2020 00:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>219</td>
-      <td></td>
-      <td>Arrival at Nedumbassery Airport by AirIndia Flight no AI964 (JEDDAH-KOCHI)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3404932, 76.8274257</td>
-      <td>Flight</td>
-      <td>P119</td>
-      <td>Gulbarga Fort, Halbarga, Brhampur, Gulbarga, Karnataka 585101</td>
-      <td>03/12/2020 07:30</td>
-      <td>03/12/2020 09:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>220</td>
-      <td></td>
-      <td>Started travel from Airport in Benzy travels bus with approximate 40 Travellers</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3447321, 76.8201453</td>
-      <td>Bus(Benzy Travels)</td>
-      <td>P119</td>
-      <td>KNZ Function Hall</td>
-      <td>03/12/2020 09:30</td>
-      <td>03/12/2020 15:30</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>221</td>
-      <td></td>
-      <td>Reached Busstop near Hajj House Karipur</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3404932, 76.8274257</td>
-      <td></td>
-      <td>P119</td>
-      <td>Gulbarga Fort, Halbarga, Brhampur, Gulbarga, Karnataka 585101</td>
-      <td>03/12/2020 15:30</td>
-      <td>03/12/2020 15:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>222</td>
-      <td></td>
-      <td>Travel to home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P119</td>
-      <td></td>
-      <td>03/12/2020 15:30</td>
-      <td>03/12/2020 16:00</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>223</td>
-      <td></td>
-      <td>Reached home at Chemrakkattil Vellari, Areakode</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3447321, 76.8201453</td>
-      <td></td>
-      <td>P119</td>
-      <td>KNZ Function Hall</td>
-      <td>03/12/2020 16:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>224</td>
-      <td></td>
-      <td>Consultation at Areecode Thaluk Hospital</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>17.3216051, 76.8695485</td>
-      <td></td>
-      <td>P119</td>
-      <td>ESIC Hospital, Kalaburagi (Gulbarga)</td>
-      <td>03/13/2020 10:10</td>
-      <td>03/13/2020 10:20</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>225</td>
-      <td></td>
-      <td>Return Home</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>10.1517834, 76.3907693</td>
-      <td></td>
-      <td>P119</td>
-      <td>Cochin International Airport</td>
-      <td>03/13/2020 11:00</td>
-      <td>03/13/2020 11:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>226</td>
-      <td></td>
-      <td>Admitted at Government Medical college, Manjeri</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P119</td>
-      <td></td>
-      <td>03/13/2020 14:00</td>
-      <td></td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>227</td>
-      <td></td>
-      <td>Reached Kempegowda Intl Airport by Indigo Flight no 6E96(Dubai - Banglore)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.1507361, 75.9454172</td>
-      <td>Flight</td>
-      <td>P175</td>
-      <td>Haj House, kerala state hajj Committee Karipur</td>
-      <td>03/15/2020 16:15</td>
-      <td></td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>228</td>
-      <td></td>
-      <td>Took KSRTC Rajahamsa Bus(KA 19 F 3170) from Satellite Bus Stand to Madikeri (via Virajpet and Muranad)</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Bus</td>
-      <td>P175</td>
-      <td></td>
-      <td>03/15/2020 23:33</td>
-      <td></td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>229</td>
-      <td></td>
-      <td>Tested COVID-19 positive in Kodagu</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>11.2313268, 76.0420297</td>
-      <td></td>
-      <td>P175</td>
-      <td>Areekode, Kerala 673639</td>
-      <td>03/19/2020 0:00</td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>230</td>
-      <td></td>
-      <td>Travel from airport to Paradie Biryani Whitefield</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td>Car</td>
-      <td>P52</td>
-      <td></td>
-      <td>03/01/2020 13:00</td>
-      <td>03/01/2020 14:00</td>
-      <td>Travel</td>
-    </tr>
-    <tr>
-      <td>231</td>
-      <td></td>
-      <td>Paradise Biryani, Whitefield</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9572489, 77.7428406</td>
-      <td></td>
-      <td>P52</td>
-      <td>Paradise Biryani %7C Whitefield</td>
-      <td>03/01/2020 14:00</td>
-      <td>03/01/2020 14:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>232</td>
-      <td></td>
-      <td>Met friend in her apartment</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P52</td>
-      <td></td>
-      <td>03/01/2020 17:30</td>
-      <td>03/01/2020 17:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>233</td>
-      <td></td>
-      <td>Walk in apartment with friend</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P52</td>
-      <td></td>
-      <td>03/02/2020 17:30</td>
-      <td>03/02/2020 17:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>234</td>
-      <td></td>
-      <td>Movie at Forum Valley Mall</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9597162, 77.7461103</td>
-      <td></td>
-      <td>P52</td>
-      <td>INOX Forum Value Mall</td>
-      <td>03/03/2020 10:00</td>
-      <td>03/03/2020 13:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>235</td>
-      <td></td>
-      <td>Walk in apartment with friend</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P52</td>
-      <td></td>
-      <td>03/03/2020 17:30</td>
-      <td>03/03/2020 18:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>236</td>
-      <td></td>
-      <td>Walk in apartment with friend</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P52</td>
-      <td></td>
-      <td>03/07/2020 17:30</td>
-      <td>03/07/2020 18:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>237</td>
-      <td></td>
-      <td>Bought medicine at Mediwave</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P52</td>
-      <td></td>
-      <td>03/08/2020 14:30</td>
-      <td>03/08/2020 15:00</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>238</td>
-      <td></td>
-      <td>Met Dhobi in apartment</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td></td>
-      <td></td>
-      <td>P52</td>
-      <td></td>
-      <td>03/08/2020 20:30</td>
-      <td>03/08/2020 20:30</td>
-      <td>placeVisit</td>
-    </tr>
-    <tr>
-      <td>239</td>
-      <td></td>
-      <td>Admitted in RJICD</td>
-      <td>https://drive.google.com/drive/folders/1yAgt3IN1u8jX8g8jEasC4KNR26HUqeKi</td>
-      <td>12.9383702, 77.5885142</td>
-      <td></td>
-      <td>P52</td>
-      <td>Health</td>
-      <td>03/08/2020 20:30</td>
-      <td>03/08/2020 20:30</td>
-      <td>placeVisit</td>
+      <td>3</td>
+      <td>1</td>
+      <td>3</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Manipur</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Mizoram</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Odisha</td>
+      <td>2</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Puducherry</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Punjab</td>
+      <td>33</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Rajasthan</td>
+      <td>39</td>
+      <td>2</td>
+      <td>3</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Tamil Nadu</td>
+      <td>20</td>
+      <td>6</td>
+      <td>1</td>
+      <td>1</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Telengana</td>
+      <td>34</td>
+      <td>10</td>
+      <td>1</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Uttarakhand</td>
+      <td>4</td>
+      <td>1</td>
+      <td>0</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>Uttar Pradesh</td>
+      <td>40</td>
+      <td>1</td>
+      <td>11</td>
+      <td>0</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td>2020-03-26</td>
+      <td>West Bengal</td>
+      <td>10</td>
+      <td>0</td>
+      <td>0</td>
+      <td>1</td>
+      <td>694</td>
+      <td>647</td>
+      <td>47</td>
+      <td>45</td>
+      <td>15</td>
+      <td>0</td>
     </tr>
   </tbody>
-</table><br>Last Refreshed : covid19india.org<br><br><br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>
+</table><br>Last Refreshed : <br><br><br/><br/><b>Disclaimer: The data shown here is subject to verification from the news.</b>
