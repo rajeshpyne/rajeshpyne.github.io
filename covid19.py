@@ -364,7 +364,7 @@ if __name__=='__main__':
 	patient_travel_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
 
 	print("Covid19 Monitor")
-	#rapidapi_monitor(rapidapi_url)
+	rapidapi_monitor(rapidapi_url)
 
 	print("Indian State Covid19 Monitor")
 	agg_stat_api(rootnet_agg_stat_api)
