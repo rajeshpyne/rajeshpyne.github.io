@@ -6,3 +6,6 @@
 <a href="https://rajeshpyne.github.io/covid19_patient_tracking.html">Patient Tracker</a><br/>
 <a href="https://rajeshpyne.github.io/patient_travel_history.html">Patient Travel History</a><br/>
 <a href="https://rajeshpyne.github.io/historical_timeseries_indian_state.html">Historical Covid19 Cases</a><br/>
+<a href="https://rajeshpyne.github.io/US_States_Statistics.html">Historical US State Covid19 Cases</a><br/>
+<a href="https://rajeshpyne.github.io/US_Counties_Statistics.html">Historical US Counties Covid19 Cases</a><br/>
+
