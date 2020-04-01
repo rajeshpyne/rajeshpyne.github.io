@@ -349,8 +349,8 @@ def put_to_html(filename,header,last_updated):
 
 
 if __name__=='__main__':
-	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country_name.php"
 	#rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country_name.php"
+	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
 
 	rootnet_agg_stat_api = "https://api.rootnet.in/covid19-in/stats/latest"
 	rootnet_covid19_history_api = "https://api.rootnet.in/covid19-in/stats/history" ## TO DO
