@@ -348,6 +348,20 @@ def put_to_html(filename,header,last_updated):
     text_file.close()
 
 
+def us_state_counties_update(csv_url,filename):
+	import urllib.request
+
+	urllib.request.urlretrieve(csv_url, filename+".csv")
+
+	df = pd.read_csv(filename+".csv")
+	df_html = df.sort_values(by='date', ascending=False).to_html(index=False)
+	# print(df.head())
+	html_file = open(filename+".html","w")
+	html_file.write("<h2>"+filename.replace('_',' ')+"</h2>")
+	html_file.write(df_html)
+	html_file.close()
+
+
 if __name__=='__main__':
 	#rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country_name.php"
 	rapidapi_url = "https://coronavirus-monitor.p.rapidapi.com/coronavirus/latest_stat_by_country.php"
@@ -363,6 +377,9 @@ if __name__=='__main__':
 	statewise_tracing_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise"
 	statewise_tracing_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history"
 	patient_travel_history_api = "https://api.rootnet.in/covid19-in/unofficial/covid19india.org/travelhistory"
+
+	us_states_historical_stat = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
+	us_counties_historical_stat = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
 
 	print("Covid19 Monitor")
 	rapidapi_monitor(rapidapi_url)
@@ -381,5 +398,7 @@ if __name__=='__main__':
 
 	print("Historical Indian State Covid19 Cases")
 	timeseries_covid19_cases(rootnet_covid19_history_api)
-	#print(rapidapi_stat.head())
-	#df.to_csv('india_covid19.csv',index=False)
+
+	print("US States/Counties Stat")
+	us_state_counties_update(us_states_historical_stat,"US_States_Statistics")
+	us_state_counties_update(us_counties_historical_stat,"US_Counties_Statistics")
