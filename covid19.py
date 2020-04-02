@@ -397,8 +397,8 @@ if __name__=='__main__':
 	print("Indian Hospital Infrastructure")
 	agg_hospital_stat(rootnet_hospital_bed_stat_api)
 
-	#print("Patient Tracking Monitor")
-	#patient_tracker(patient_tracing_api)
+	print("Patient Tracking Monitor")
+	patient_tracker(patient_tracing_api)
 
 	print("Patient Travel History Monitor")
 	patient_travel_history_stat(patient_travel_history_api)
