@@ -381,6 +381,13 @@ if __name__=='__main__':
 	us_states_historical_stat = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-states.csv"
 	us_counties_historical_stat = "https://raw.githubusercontent.com/nytimes/covid-19-data/master/us-counties.csv"
 
+	overall_api = "https://api.covid19india.org/data.json"
+	state_district_wise_api = "https://api.covid19india.org/v2/state_district_wise.json"
+	travel_history_api = "https://api.covid19india.org/travel_history.json"
+	raw_data_api = "https://api.covid19india.org/raw_data.json"
+	state_daily_change_api = "https://api.covid19india.org/states_daily.json"
+
+
 	print("Covid19 Monitor")
 	rapidapi_monitor(rapidapi_url)
 
