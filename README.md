@@ -8,4 +8,5 @@
 <a href="https://rajeshpyne.github.io/historical_timeseries_indian_state.html">Historical Covid19 Cases</a><br/>
 <a href="https://rajeshpyne.github.io/US_States_Statistics.html">Historical US State Covid19 Cases</a><br/>
 <a href="https://rajeshpyne.github.io/US_Counties_Statistics.html">Historical US Counties Covid19 Cases</a><br/>
+<a href="https://faceai.herokuapp.com">Face Detection App</a><br/>
 
